@@ -7,31 +7,37 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orb orb-a"></div>
-  <div class="bg-orb orb-b"></div>
-  <header class="site-header glass">
-    <div class="wrap nav">
-      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
-      <nav>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"></span>
+        <span>Real3D</span>
+      </a>
+
+      <nav class="main-nav">
         <a href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
         <a class="active" href="commission.html">Encargar</a>
         <a href="quality.html">Calidad</a>
         <a href="about.html">Empresa</a>
       </nav>
-      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
+
+      <a href="admin.html" class="btn btn-ghost btn-sm">Admin</a>
     </div>
   </header>
 
-  <main class="wrap page-top">
+  <main class="container page-top">
     <section class="section-head reveal">
       <div class="eyebrow">Encargos</div>
-      <h1>Pide un proyecto a medida.</h1>
-      <p>Props, personajes, escenarios, packs de assets o trabajos personalizados para tu pipeline.</p>
+      <h1>Solicita un proyecto a medida.</h1>
+      <p>Props, personajes, entornos, packs de assets o trabajos personalizados para videojuegos, visualización o branding.</p>
     </section>
 
-    <section class="form-shell glass reveal">
-      <form class="order-form" id="commissionForm">
+    <section class="card form-shell reveal">
+      <form id="commissionForm" class="order-form">
         <div class="field">
           <label>Nombre del proyecto</label>
           <input type="text" placeholder="Ej. Pack sci-fi para shooter" required />
@@ -48,7 +54,7 @@
               <button type="button" data-value="Escenario / entorno">Escenario / entorno</button>
               <button type="button" data-value="Otro">Otro</button>
             </div>
-            <input type="hidden" name="category" required />
+            <input type="hidden" required />
           </div>
 
           <div class="field custom-select">
@@ -59,13 +65,13 @@
               <button type="button" data-value="Pro">Pro</button>
               <button type="button" data-value="Ultimate">Ultimate</button>
             </div>
-            <input type="hidden" name="plan" required />
+            <input type="hidden" required />
           </div>
         </div>
 
         <div class="field">
           <label>Descripción</label>
-          <textarea rows="7" placeholder="Cuenta qué necesitas, referencias visuales, estilo, plataforma, plazos y uso final." required></textarea>
+          <textarea rows="7" placeholder="Estilo, referencias, uso final, plataforma, plazos y presupuesto aproximado." required></textarea>
         </div>
 
         <div class="grid-2">
@@ -73,6 +79,7 @@
             <label>Presupuesto estimado</label>
             <input type="text" placeholder="Ej. 250€ - 500€" />
           </div>
+
           <div class="field">
             <label>Fecha objetivo</label>
             <input type="date" />
@@ -81,11 +88,12 @@
 
         <button class="btn btn-gradient btn-large" type="submit">Enviar encargo</button>
       </form>
-      <div class="success-box hidden" id="successBox">
+
+      <div id="successBox" class="success-box hidden">
         <div class="eyebrow">Solicitud enviada</div>
         <h2>Tu proyecto ya está en cola.</h2>
-        <p>En breve recibirás propuestas en función del nivel y la prioridad de tu cuenta.</p>
-        <a class="btn btn-secondary" href="library.html">Volver a biblioteca</a>
+        <p>El siguiente paso será revisar la viabilidad, el nivel del encargo y la prioridad de la cuenta.</p>
+        <a href="library.html" class="btn btn-secondary">Volver a biblioteca</a>
       </div>
     </section>
   </main>
