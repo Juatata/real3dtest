@@ -1,73 +1,564 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Real3D</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real3D</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-soft: rgba(255,255,255,0.06);
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --line: rgba(255,255,255,0.1);
+      --accent: #ffffff;
+      --glow: radial-gradient(circle at top, rgba(120,119,198,0.35), transparent 35%),
+              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12), transparent 20%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      background-image: var(--glow);
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(10,10,10,0.65);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 110px 0 70px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 auto;
+      max-width: 900px;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0a;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .hero-panel {
+      margin-top: 60px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 0;
+    }
+
+    .hero-card {
+      padding: 42px;
+      min-height: 420px;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+
+    .hero-card:last-child {
+      border-right: 0;
+    }
+
+    .panel-tag {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin: 0 0 18px;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .mock-box {
+      margin-top: 36px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .mock-top {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+    }
+
+    .mock-line {
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 12px;
+    }
+
+    .mock-line.big {
+      height: 120px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    section {
+      padding: 36px 0 90px;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h3 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      letter-spacing: -0.05em;
+      margin: 0 0 14px;
+      line-height: 1;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 24px;
+      padding: 28px;
+      min-height: 240px;
+    }
+
+    .card h4 {
+      margin: 14px 0 12px;
+      font-size: 1.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .card-number {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.95rem;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      box-shadow: 0 16px 60px rgba(0,0,0,0.35);
+    }
+
+    .price-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      letter-spacing: -0.04em;
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      margin: 10px 0 20px;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+
+    .price-card li {
+      padding: 10px 0;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta {
+      padding-bottom: 110px;
+    }
+
+    .cta-box {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 48px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    }
+
+    .cta-box h3 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .cta-box p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 24px 0 40px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .cards,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-card:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, 1200px);
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+
+      .hero-card,
+      .card,
+      .price-card,
+      .cta-box {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Real3D</h1>
-    <p>Marketplace de modelos 3D creados por artistas reales.</p>
-    <div class="buttons">
-        <a href="#" class="btn">Explorar artistas</a>
-        <a href="#" class="btn secondary">Publicar encargo</a>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Real3D</div>
+      <div class="nav-links">
+        <a href="#vision">Visión</a>
+        <a href="#benefits">Ventajas</a>
+        <a href="#pricing">Freemium</a>
+        <a href="#join">Artistas</a>
+      </div>
     </div>
-</header>
+  </nav>
 
-<section>
-    <h2>¿Cómo funciona?</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>1. Publica</h3>
-            <p>Describe el modelo 3D que necesitas.</p>
-        </div>
-        <div class="card">
-            <h3>2. Recibe ofertas</h3>
-            <p>Artistas responden a tu encargo.</p>
-        </div>
-        <div class="card">
-            <h3>3. Elige</h3>
-            <p>Selecciona al mejor artista.</p>
-        </div>
-        <div class="card">
-            <h3>4. Recibe</h3>
-            <p>Obtén tu modelo listo para usar.</p>
-        </div>
-    </div>
-</section>
+  <main>
+    <section class="hero container">
+      <div class="eyebrow">Marketplace premium de creación 3D</div>
+      <h1>Contenido 3D real, creado por personas reales.</h1>
+      <p>
+        Real3D conecta clientes y artistas 3D profesionales en una plataforma
+        elegante, directa y premium. Menos automatización vacía. Más calidad,
+        criterio y trabajo humano.
+      </p>
 
-<section class="dark">
-    <h2>¿Por qué Real3D?</h2>
-    <p>
-        A diferencia de la IA, los artistas humanos ofrecen calidad,
-        personalización y comunicación directa.
-    </p>
-</section>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary">Ver modelo freemium</a>
+        <a href="#join" class="btn btn-secondary">Trabaja con nosotros</a>
+      </div>
 
-<section>
-    <h2>Modelo Freemium</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Gratis</h3>
-            <p>Publica encargos básicos sin coste.</p>
+      <div class="hero-panel">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="panel-tag">Para clientes</div>
+            <h2>Encarga assets, props y modelos con nivel profesional.</h2>
+            <p>
+              Publica tu proyecto, recibe propuestas y elige artistas reales
+              capaces de adaptar el resultado a tu estilo, tu pipeline y tu visión.
+            </p>
+            <div class="mock-box">
+              <div class="mock-top">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <div class="mock-line" style="width: 68%;"></div>
+              <div class="mock-line" style="width: 92%;"></div>
+              <div class="mock-line" style="width: 76%;"></div>
+              <div class="mock-line big"></div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="panel-tag">Para artistas</div>
+            <h2>Convierte habilidad en ingresos.</h2>
+            <p>
+              Crea perfil, muestra portfolio y accede a clientes que valoran
+              resultados hechos por humanos, no generados de forma automática.
+            </p>
+            <div class="mock-box">
+              <div class="mock-line" style="width: 45%;"></div>
+              <div class="mock-line" style="width: 85%;"></div>
+              <div class="mock-line big"></div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-            <h3>Premium</h3>
-            <p>Mayor visibilidad y acceso a artistas destacados.</p>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="dark">
-    <h2>Trabaja con nosotros</h2>
-    <p>Únete como artista y gana dinero creando modelos 3D.</p>
-</section>
+    <section id="vision" class="container">
+      <div class="section-head">
+        <h3>Una plataforma pensada para diferenciarse de la IA masiva.</h3>
+        <p>
+          Real3D no compite por generar más rápido, sino por ofrecer mejores resultados.
+          La propuesta de valor está en la calidad, la comunicación directa y la
+          personalización real del trabajo.
+        </p>
+      </div>
+    </section>
 
-<footer>
-    <p>© 2026 Real3D - Proyecto educativo</p>
-</footer>
+    <section id="benefits" class="container">
+      <div class="section-head">
+        <h3>Por qué un cliente elegiría Real3D.</h3>
+      </div>
 
+      <div class="cards">
+        <article class="card">
+          <div class="card-number">01</div>
+          <h4>Calidad humana</h4>
+          <p>
+            Los artistas interpretan referencias, estilo, intención y uso final
+            del modelo mucho mejor que una generación automática genérica.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">02</div>
+          <h4>Comunicación directa</h4>
+          <p>
+            El cliente puede pedir cambios, definir requisitos y ajustar el trabajo
+            con una persona real durante el proceso.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">03</div>
+          <h4>Resultado útil</h4>
+          <p>
+            El asset final se entrega con intención práctica para videojuegos,
+            visualización, animación o branding, no como simple imagen llamativa.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="container">
+      <div class="section-head">
+        <h3>Modelo freemium simple y rentable.</h3>
+        <p>
+          La versión gratuita atrae usuarios y artistas. La premium monetiza visibilidad,
+          mejores herramientas y acceso preferente a talento destacado.
+        </p>
+      </div>
+
+      <div class="pricing">
+        <article class="price-card">
+          <h4>Free</h4>
+          <div class="price">0€ <span>/ inicio</span></div>
+          <ul>
+            <li>Publicación básica de proyectos</li>
+            <li>Perfil estándar para artistas</li>
+            <li>Exploración limitada de talento</li>
+            <li>Acceso general a la plataforma</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Empezar gratis</a>
+        </article>
+
+        <article class="price-card featured">
+          <h4>Premium</h4>
+          <div class="price">9,99€ <span>/ mes</span></div>
+          <ul>
+            <li>Mayor visibilidad de proyectos y perfiles</li>
+            <li>Prioridad en resultados de búsqueda</li>
+            <li>Acceso a artistas destacados</li>
+            <li>Herramientas extra para clientes y creadores</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Probar premium</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="join" class="container cta">
+      <div class="cta-box">
+        <h3>El futuro premium del 3D puede seguir siendo humano.</h3>
+        <p>
+          Real3D plantea una empresa digital con imagen moderna, modelo freemium y
+          una propuesta clara: conectar demanda real con talento creativo real.
+        </p>
+        <a href="#" class="btn btn-primary">Unirse a Real3D</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Real3D — Proyecto educativo de modelo de negocio digital.</div>
+  </footer>
 </body>
 </html>
