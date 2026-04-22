@@ -3,169 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real3D - Marketplace premium de assets y encargos 3D</title>
+  <title>Real3D — Biblioteca premium y encargos 3D</title>
   <meta name="description" content="Marketplace premium de assets 3D, bibliotecas por suscripción y encargos a artistas reales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-grid">
-  <div class="page-shell">
-    <header class="nav">
-      <div class="nav-inner">
-        <a href="index.html" class="brand"><span class="brand-mark"></span> Real3D</a>
-        <nav class="nav-links">
-          <a href="index.html">Inicio</a>
-          <a href="library.html">Biblioteca</a>
-          <a href="plans.html">Planes</a>
-          <a href="commission.html">Encargar</a>
-        </nav>
-        <div class="nav-actions">
-          <a class="btn btn-sm btn-ghost" href="library.html">Ver biblioteca</a>
-          <a class="btn btn-sm btn-primary" href="commission.html">Encargar proyecto</a>
-        </div>
-        <button class="mobile-toggle">≡</button>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="site-header glass sticky">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="library.html">Biblioteca</a>
+        <a href="plans.html">Planes</a>
+        <a href="commission.html">Encargar</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="library.html">Ver biblioteca</a>
+        <a class="btn btn-primary" href="commission.html">Pedir encargo</a>
       </div>
-    </header>
+      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+    <div class="mobile-menu wrap">
+      <a href="index.html">Inicio</a>
+      <a href="library.html">Biblioteca</a>
+      <a href="plans.html">Planes</a>
+      <a href="commission.html">Encargar</a>
+    </div>
+  </header>
 
-    <main class="container hero">
-      <div class="eyebrow reveal">Marketplace premium de creación 3D y bibliotecas curadas</div>
-      <h1 class="reveal"><span class="gradient-text">Assets 3D brutales.</span><br> Hechos por humanos, vendidos con nivel premium.</h1>
-      <p class="hero-sub reveal">
-        Real3D combina una biblioteca de modelos 3D por suscripción con encargos directos a artistas reales.
-        Navega, previsualiza modelos en 3D dentro de la propia web y escala desde plan Free hasta Ultimate.
-      </p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="library.html">Entrar en la biblioteca</a>
-        <a class="btn btn-dark" href="plans.html">Ver planes y precios</a>
-        <a class="btn btn-ghost" href="commission.html">Pedir encargo a medida</a>
-      </div>
-
-      <section class="hero-grid">
-        <article class="glass hero-card reveal">
-          <div class="hero-panel">
-            <div class="label">Para estudios, creadores y desarrolladores</div>
-            <h2>Una plataforma que vende catálogo y talento a la vez.</h2>
-            <p>
-              Accede a bibliotecas 3D curadas por niveles, descubre assets listos para usar y convierte la suscripción
-              en un sistema escalable: Free para captar usuarios, Pro para desbloquear la biblioteca completa y Ultimate
-              para incluir encargos mensuales.
-            </p>
-            <div class="visual-stack floaty">
-              <div class="visual-box">
-                <div class="fake-bar w-70"></div>
-                <div class="fake-bar w-85"></div>
-                <div class="fake-bar w-55"></div>
-                <div class="fake-preview"></div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <div class="hero-side">
-          <article class="glass stat-card reveal">
-            <div class="stat-top">Modelo de negocio</div>
-            <div class="stat-number">3 vías</div>
-            <div class="stat-copy">Suscripción Free / Pro / Ultimate, venta de assets premium y encargos on demand con artistas seleccionados.</div>
-            <div class="pill-row">
-              <span class="pill">Biblioteca Free</span>
-              <span class="pill">Biblioteca Pro</span>
-              <span class="pill">Encargos a medida</span>
-            </div>
-          </article>
-
-          <article class="glass stat-card reveal">
-            <div class="stat-top">Posicionamiento</div>
-            <div class="stat-number">Premium</div>
-            <div class="stat-copy">Diseño tipo Apple, experiencia fluida y sensación de producto tecnológico serio, no simple marketplace escolar.</div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <h3>Qué hace especial a Real3D.</h3>
-          <p>La plataforma no vive solo de vender archivos. Vive de mezclar acceso a bibliotecas, suscripción recurrente y encargos premium con dirección artística humana.</p>
-        </div>
-        <div class="grid-3">
-          <article class="feature-card reveal">
-            <div class="num">01</div>
-            <div class="icon-badge">✦</div>
-            <h4>Bibliotecas por nivel</h4>
-            <p>El plan gratis da acceso solo a la biblioteca Free. Pro desbloquea toda la biblioteca y Ultimate añade encargos mensuales incluidos.</p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="num">02</div>
-            <div class="icon-badge">◌</div>
-            <h4>Previsualización 3D real</h4>
-            <p>Los usuarios pueden ver el modelo dentro de la propia web, rotarlo, acercarse y evaluar la calidad antes de descargar o suscribirse.</p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="num">03</div>
-            <div class="icon-badge">▣</div>
-            <h4>Encargos humanos on demand</h4>
-            <p>No todo sale de una biblioteca. Los clientes también pueden pedir trabajos a medida a artistas seleccionados y monetizar el talento.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container">
-        <div class="grid-2">
-          <article class="plan-card reveal">
-            <h4>Biblioteca Free</h4>
-            <p class="muted">Una selección pública para captar usuarios, enseñar calidad y generar interés.</p>
-            <ul class="plan-list">
-              <li><strong>Acceso:</strong> solo assets marcados como Free</li>
-              <li><strong>Objetivo:</strong> onboarding y prueba de la plataforma</li>
-              <li><strong>Ideal para:</strong> estudiantes, curiosos y pequeños tests</li>
-            </ul>
-            <a class="btn btn-ghost" href="library.html">Explorar Free</a>
-          </article>
-          <article class="plan-card featured reveal">
-            <div class="plan-chip">Más rentable</div>
-            <h4>Biblioteca completa + encargos</h4>
-            <p class="muted">La combinación que convierte una web bonita en un negocio de verdad: ingresos recurrentes y tickets altos.</p>
-            <ul class="plan-list">
-              <li><strong>Pro:</strong> acceso completo a biblioteca premium</li>
-              <li><strong>Ultimate:</strong> hasta 25 encargos al mes incluidos</li>
-              <li><strong>Extra:</strong> encargos fuera del plan como pagos on demand</li>
-            </ul>
-            <a class="btn btn-primary" href="plans.html">Ver precios</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-box reveal">
-          <h3>Presentación potente, estructura real de startup.</h3>
-          <p>
-            Esta demo ya está pensada para que puedas enseñarla en clase como si fuera una marca tech premium. Tiene subpáginas,
-            llamadas a la acción, pricing, biblioteca con preview 3D y una página para pedir encargos.
+  <main>
+    <section class="hero wrap section-xl reveal">
+      <div class="eyebrow">Marketplace premium de assets y encargos 3D</div>
+      <div class="hero-grid">
+        <div>
+          <h1 class="display">Assets 3D premium, bibliotecas por suscripción y encargos a medida.</h1>
+          <p class="lead">
+            Real3D combina una biblioteca curada por niveles con un servicio de encargos directo a artistas.
+            Empiezas con acceso Free, subes a Pro para desbloquear catálogo completo y Ultimate añade encargos mensuales incluidos.
           </p>
-          <div class="hero-actions" style="justify-content:center; margin-top: 0;">
-            <a class="btn btn-primary" href="plans.html">Ir a planes</a>
-            <a class="btn btn-dark" href="commission.html">Ir a encargos</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="library.html">Entrar en la biblioteca</a>
+            <a class="btn btn-dark" href="plans.html">Ver planes y precios</a>
+            <a class="btn btn-ghost" href="commission.html">Pedir encargo a medida</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat glass"><strong>Free</strong><span>Biblioteca inicial descargable</span></div>
+            <div class="stat glass"><strong>Pro</strong><span>Acceso completo + encargos on demand</span></div>
+            <div class="stat glass"><strong>Ultimate</strong><span>Hasta 25 encargos mensuales</span></div>
+          </div>
+        </div>
+        <div class="hero-showcase glass card-pad">
+          <div class="panel-topline">
+            <span class="tiny-badge">Preview interactiva</span>
+            <span class="tiny-badge tiny-badge-soft">Biblioteca Free</span>
+          </div>
+          <model-viewer
+            class="hero-viewer"
+            src="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb"
+            camera-controls
+            auto-rotate
+            shadow-intensity="1"
+            exposure="1.1"
+            environment-image="neutral"
+            poster="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Duck/screenshot/screenshot.png">
+          </model-viewer>
+          <div class="viewer-caption-row">
+            <div>
+              <h3>Duck Demo Asset</h3>
+              <p>Disponible para descarga directa dentro de la biblioteca Free.</p>
+            </div>
+            <button class="btn btn-small btn-secondary" data-download-url="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb" data-download-name="duck-demo.glb">Descargar .glb</button>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div>© <span data-year></span> Real3D — Proyecto de negocio digital premium.</div>
-        <div class="footer-links">
-          <a href="index.html">Inicio</a>
-          <a href="library.html">Biblioteca</a>
-          <a href="plans.html">Planes</a>
-          <a href="commission.html">Encargar</a>
+    <section class="wrap section reveal">
+      <div class="section-heading">
+        <div class="eyebrow">Modelo de negocio</div>
+        <h2>Una estructura clara: captación con Free, recurrencia con Pro y ticket alto con Ultimate.</h2>
+      </div>
+      <div class="three-col">
+        <article class="glass feature-card">
+          <div class="feature-number">01</div>
+          <h3>Biblioteca Free</h3>
+          <p>Entrada sin fricción con assets seleccionados, preview 3D en la propia web y descarga real de modelos gratuitos.</p>
+        </article>
+        <article class="glass feature-card">
+          <div class="feature-number">02</div>
+          <h3>Suscripción Pro</h3>
+          <p>Desbloquea toda la biblioteca curada, acceso prioritario a nuevos packs y encargos on demand a artistas.</p>
+        </article>
+        <article class="glass feature-card">
+          <div class="feature-number">03</div>
+          <h3>Ultimate</h3>
+          <p>Plan premium para estudios o equipos que necesitan volumen: acceso total más hasta 25 encargos mensuales.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section reveal">
+      <div class="split-card glass">
+        <div>
+          <div class="eyebrow">Bibliotecas por niveles</div>
+          <h2>Un catálogo visual para descargar, explorar y presentar mejor el proyecto.</h2>
+          <p class="muted">La biblioteca está separada por acceso Free, Pro y Ultimate. Cada asset tiene su propia vista previa 3D, categoría, badge de nivel y descarga.</p>
+          <div class="mini-actions">
+            <a href="library.html" class="btn btn-primary">Ver biblioteca</a>
+            <a href="plans.html" class="btn btn-ghost">Comparar planes</a>
+          </div>
+        </div>
+        <div class="stack-cards">
+          <div class="mini-card glass"><span>Free</span><strong>Props básicos y ejemplos descargables</strong></div>
+          <div class="mini-card glass"><span>Pro</span><strong>Biblioteca completa, packs premium y acceso preferente</strong></div>
+          <div class="mini-card glass"><span>Ultimate</span><strong>Todo el catálogo + servicio recurrente de encargos</strong></div>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="wrap section reveal">
+      <div class="section-heading">
+        <div class="eyebrow">Flujo principal</div>
+        <h2>Un recorrido simple y visual.</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item glass">
+          <span>1</span>
+          <h3>Exploras la biblioteca</h3>
+          <p>Visualizas assets 3D dentro de la propia web antes de descargar o suscribirte.</p>
+        </div>
+        <div class="timeline-item glass">
+          <span>2</span>
+          <h3>Eliges el plan</h3>
+          <p>Free para probar, Pro para uso serio y Ultimate para volumen y encargos incluidos.</p>
+        </div>
+        <div class="timeline-item glass">
+          <span>3</span>
+          <h3>Encargas a medida</h3>
+          <p>Si no está en biblioteca, pides un asset personalizado con briefing y prioridad según plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section reveal">
+      <div class="cta-block glass">
+        <div>
+          <div class="eyebrow">Preparado para impresionar</div>
+          <h2>Una demo que ya parece producto real.</h2>
+          <p class="muted">Con home premium, biblioteca interactiva, planes, panel de encargos y una zona admin oculta para cargar nuevos modelos.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="plans.html" class="btn btn-primary">Ver precios</a>
+          <a href="commission.html" class="btn btn-dark">Ir al formulario</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <div>© 2026 Real3D — proyecto educativo de modelo de negocio digital.</div>
+    <a href="admin.html" class="admin-link" title="Admin">•</a>
+  </footer>
+
   <script src="app.js"></script>
 </body>
 </html>

@@ -3,127 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biblioteca - Real3D</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Real3D — Biblioteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-grid">
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand"><span class="brand-mark"></span> Real3D</a>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <header class="site-header glass sticky">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
-        <a href="library.html">Biblioteca</a>
+        <a href="library.html" class="active">Biblioteca</a>
         <a href="plans.html">Planes</a>
         <a href="commission.html">Encargar</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-sm btn-ghost" href="plans.html">Upgrade a Pro</a>
-        <a class="btn btn-sm btn-primary" href="commission.html">Encargar</a>
+        <a class="btn btn-ghost" href="plans.html">Ver planes</a>
+        <a class="btn btn-primary" href="commission.html">Pedir encargo</a>
       </div>
-      <button class="mobile-toggle">≡</button>
+      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+    <div class="mobile-menu wrap">
+      <a href="index.html">Inicio</a>
+      <a href="library.html">Biblioteca</a>
+      <a href="plans.html">Planes</a>
+      <a href="commission.html">Encargar</a>
     </div>
   </header>
 
-  <main class="container section">
-    <div class="section-head reveal">
-      <div class="eyebrow">Biblioteca 3D con preview interactiva</div>
-      <h3>Explora la colección y gira los modelos en tiempo real.</h3>
-      <p>
-        En esta demo, los assets Free están visibles para todos. Los assets Pro y Ultimate aparecen bloqueados a nivel visual para dejar claro
-        el modelo freemium. Luego puedes justificar en clase que el acceso real se controlaría con login y permisos.
-      </p>
-    </div>
-
-    <div class="library-filter reveal">
-      <span class="filter-chip active">Todos</span>
-      <span class="filter-chip">Free</span>
-      <span class="filter-chip">Pro</span>
-      <span class="filter-chip">Ultimate</span>
-      <span class="filter-chip">Props</span>
-      <span class="filter-chip">Sci-Fi</span>
-    </div>
-
-    <div class="grid-2">
-      <article class="library-card reveal">
-        <div class="library-preview">
-          <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" camera-controls auto-rotate exposure="1" shadow-intensity="1"></model-viewer>
-        </div>
-        <h4>Astronaut Pack</h4>
-        <p>Asset visible como ejemplo Free. Sirve para demostrar preview 3D, rotación y sensación premium dentro de la web.</p>
-        <div class="tag-row">
-          <span class="tag">Free</span>
-          <span class="tag">Character</span>
-          <span class="tag">Game Ready</span>
-        </div>
-        <div class="model-caption">
-          <span>Acceso: Biblioteca Free</span>
-          <a href="plans.html">Descubrir Pro →</a>
-        </div>
-      </article>
-
-      <article class="library-card reveal">
-        <div class="library-preview">
-          <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" camera-controls auto-rotate exposure="1.1" shadow-intensity="1"></model-viewer>
-        </div>
-        <h4>Robot Expressive</h4>
-        <p>Ejemplo de asset premium. En la narrativa del negocio, este quedaría desbloqueado solo para usuarios Pro o Ultimate.</p>
-        <div class="tag-row">
-          <span class="tag">Pro</span>
-          <span class="tag">Sci-Fi</span>
-          <span class="tag">Rigged</span>
-        </div>
-        <div class="model-caption">
-          <span>Acceso: Biblioteca Pro</span>
-          <a href="plans.html">Hazte Pro →</a>
-        </div>
-      </article>
-
-      <article class="library-card reveal">
-        <div class="library-preview">
-          <model-viewer src="https://modelviewer.dev/shared-assets/models/Chair.glb" camera-controls auto-rotate exposure="1.05" shadow-intensity="1"></model-viewer>
-        </div>
-        <h4>Chair Interior Asset</h4>
-        <p>Asset simple para enseñar que también puede haber categorías de producto, interiorismo o archviz dentro del catálogo.</p>
-        <div class="tag-row">
-          <span class="tag">Free</span>
-          <span class="tag">Furniture</span>
-          <span class="tag">Archviz</span>
-        </div>
-        <div class="model-caption">
-          <span>Acceso: Biblioteca Free</span>
-          <a href="commission.html">Pedir pack a medida →</a>
-        </div>
-      </article>
-
-      <article class="library-card reveal">
-        <div class="library-preview">
-          <model-viewer src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" camera-controls auto-rotate exposure="1" shadow-intensity="1"></model-viewer>
-        </div>
-        <h4>Collector Character</h4>
-        <p>Ejemplo de asset que encaja mejor en Pro o Ultimate por su mayor valor percibido dentro de la colección.</p>
-        <div class="tag-row">
-          <span class="tag">Ultimate</span>
-          <span class="tag">Hero Asset</span>
-          <span class="tag">Premium</span>
-        </div>
-        <div class="model-caption">
-          <span>Acceso: Ultimate</span>
-          <a href="plans.html">Comparar planes →</a>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>© <span data-year></span> Real3D — Biblioteca interactiva con preview 3D.</div>
-      <div class="footer-links">
-        <a href="index.html">Inicio</a>
-        <a href="plans.html">Planes</a>
-        <a href="commission.html">Encargar</a>
+  <main class="wrap section-xl">
+    <div class="page-top reveal">
+      <div>
+        <div class="eyebrow">Biblioteca curada</div>
+        <h1 class="page-title">Explora y descarga assets por nivel de acceso.</h1>
+        <p class="lead small">Los assets Free se pueden descargar ya. Pro y Ultimate quedan visibles como parte del catálogo premium del modelo de negocio.</p>
+      </div>
+      <div class="plan-pill-group glass">
+        <span class="plan-pill active">Free</span>
+        <span class="plan-pill">Pro</span>
+        <span class="plan-pill">Ultimate</span>
       </div>
     </div>
+
+    <section class="library-segment reveal">
+      <div class="segment-header">
+        <div>
+          <h2>Biblioteca Free</h2>
+          <p>Assets descargables y visibles para cualquiera.</p>
+        </div>
+      </div>
+      <div id="free-grid" class="asset-grid"></div>
+    </section>
+
+    <section class="library-segment reveal">
+      <div class="segment-header">
+        <div>
+          <h2>Biblioteca Pro</h2>
+          <p>Catálogo desbloqueable con la suscripción Pro.</p>
+        </div>
+        <a class="btn btn-secondary" href="plans.html">Desbloquear Pro</a>
+      </div>
+      <div id="pro-grid" class="asset-grid"></div>
+    </section>
+
+    <section class="library-segment reveal">
+      <div class="segment-header">
+        <div>
+          <h2>Biblioteca Ultimate</h2>
+          <p>Selección premium para estudios y usuarios avanzados.</p>
+        </div>
+        <a class="btn btn-dark" href="plans.html">Ver Ultimate</a>
+      </div>
+      <div id="ultimate-grid" class="asset-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <div>Real3D — biblioteca premium con preview 3D.</div>
+    <a href="admin.html" class="admin-link" title="Admin">•</a>
   </footer>
   <script src="app.js"></script>
 </body>

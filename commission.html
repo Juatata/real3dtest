@@ -3,115 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encargar proyecto - Real3D</title>
+  <title>Real3D — Encargar proyecto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-grid">
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand"><span class="brand-mark"></span> Real3D</a>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <header class="site-header glass sticky">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
-        <a href="commission.html">Encargar</a>
+        <a href="commission.html" class="active">Encargar</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-sm btn-ghost" href="plans.html">Ver suscripción</a>
-        <a class="btn btn-sm btn-primary" href="library.html">Ver assets</a>
+        <a class="btn btn-ghost" href="plans.html">Ver planes</a>
+        <a class="btn btn-primary" href="library.html">Explorar assets</a>
       </div>
-      <button class="mobile-toggle">≡</button>
+      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+    <div class="mobile-menu wrap">
+      <a href="index.html">Inicio</a>
+      <a href="library.html">Biblioteca</a>
+      <a href="plans.html">Planes</a>
+      <a href="commission.html">Encargar</a>
     </div>
   </header>
 
-  <main class="container section">
-    <div class="section-head reveal">
-      <div class="eyebrow">Encargos a medida</div>
-      <h3>Pide un modelo, prop, pack o escena a artistas reales.</h3>
-      <p>Esta página vende la parte más premium del negocio: trabajos personalizados. Sirve para enseñar que Real3D no depende solo del catálogo, sino también del servicio creativo.</p>
-    </div>
-
-    <div class="form-grid">
-      <article class="form-card reveal">
-        <h4>Formulario de encargo</h4>
-        <p>En una versión real, esto conectaría con base de datos, panel de artistas y presupuestos. Para la demo queda brutal igualmente.</p>
-        <form class="field-group">
-          <label>Nombre o estudio
-            <input type="text" placeholder="Ej. Nova Games Studio">
-          </label>
-          <label>Email
-            <input type="email" placeholder="contacto@estudio.com">
-          </label>
-          <label>Tipo de encargo
-            <select>
-              <option>Prop individual</option>
-              <option>Personaje</option>
-              <option>Pack de assets</option>
-              <option>Escenario / entorno</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>Presupuesto estimado
-            <select>
-              <option>Menos de 100€</option>
-              <option>100€ - 300€</option>
-              <option>300€ - 1000€</option>
-              <option>Más de 1000€</option>
-            </select>
-          </label>
-          <label>Describe el proyecto
-            <textarea placeholder="Cuenta qué necesitas, estilo, uso final, referencias, plataforma, plazos y cualquier detalle útil."></textarea>
-          </label>
-          <div class="checks">
-            <label class="check"><input type="checkbox"> Necesito rig / animación</label>
-            <label class="check"><input type="checkbox"> Quiero UVs y texturas</label>
-            <label class="check"><input type="checkbox"> Me interesa plan Ultimate</label>
-          </div>
-          <button type="button" class="btn btn-primary">Enviar solicitud</button>
-        </form>
-      </article>
-
-      <div class="side-stack">
-        <article class="form-card reveal">
-          <h4>Cómo se monetiza</h4>
-          <div class="mini-list">
-            <div class="mini-item">
-              <strong>Pago on demand</strong>
-              <span class="muted">El cliente paga por proyecto o por lote de assets.</span>
-            </div>
-            <div class="mini-item">
-              <strong>Descuento para Pro</strong>
-              <span class="muted">El plan Pro puede incluir rebajas en encargos sueltos.</span>
-            </div>
-            <div class="mini-item">
-              <strong>Ultimate incluido</strong>
-              <span class="muted">Hasta 25 encargos al mes incluidos para clientes de alto valor.</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="form-card reveal">
-          <h4>Ejemplos de tarifas</h4>
-          <div class="mini-list">
-            <div class="mini-item"><strong>Prop simple</strong><span class="muted">Desde 49€</span></div>
-            <div class="mini-item"><strong>Personaje básico</strong><span class="muted">Desde 199€</span></div>
-            <div class="mini-item"><strong>Pack de assets</strong><span class="muted">Desde 299€</span></div>
-            <div class="mini-item"><strong>Entorno completo</strong><span class="muted">Desde 799€</span></div>
-          </div>
-        </article>
+  <main class="wrap section-xl">
+    <div class="page-top reveal">
+      <div>
+        <div class="eyebrow">Encargo a medida</div>
+        <h1 class="page-title">Pide un asset o proyecto 3D con una interfaz más premium.</h1>
+        <p class="lead small">Formulario orientado a demo visual seria. Los campos y selectores ya no parecen básicos.</p>
       </div>
     </div>
+
+    <section class="commission-layout reveal">
+      <form class="glass commission-form card-pad" id="commission-form">
+        <div class="form-grid">
+          <label>
+            <span>Nombre</span>
+            <input type="text" placeholder="Tu nombre o estudio" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="correo@ejemplo.com" required>
+          </label>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>Plan</span>
+            <div class="select-wrap">
+              <select required>
+                <option value="">Selecciona tu plan</option>
+                <option>Free</option>
+                <option>Pro</option>
+                <option>Ultimate</option>
+              </select>
+            </div>
+          </label>
+          <label>
+            <span>Tipo de encargo</span>
+            <div class="select-wrap">
+              <select required>
+                <option value="">Selecciona una categoría</option>
+                <option>Prop individual</option>
+                <option>Personaje</option>
+                <option>Pack de assets</option>
+                <option>Escenario / entorno</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </label>
+        </div>
+
+        <label>
+          <span>Título del proyecto</span>
+          <input type="text" placeholder="Ejemplo: pack sci-fi para videojuego" required>
+        </label>
+
+        <label>
+          <span>Briefing</span>
+          <textarea rows="7" placeholder="Cuenta qué necesitas, estilo, uso final, referencias, plataforma, plazos y detalles técnicos."></textarea>
+        </label>
+
+        <div class="form-grid">
+          <label>
+            <span>Presupuesto</span>
+            <input type="text" placeholder="Ej: 250€ - 700€">
+          </label>
+          <label>
+            <span>Fecha objetivo</span>
+            <input type="date">
+          </label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+      </form>
+
+      <aside class="glass card-pad side-summary">
+        <div class="eyebrow">Resumen</div>
+        <h2>Cómo encaja cada plan</h2>
+        <ul class="bullet-list">
+          <li><strong>Free:</strong> exploras biblioteca y descubres el servicio.</li>
+          <li><strong>Pro:</strong> encargos on demand con prioridad media.</li>
+          <li><strong>Ultimate:</strong> hasta 25 encargos mensuales incluidos.</li>
+        </ul>
+        <div class="divider"></div>
+        <p class="muted">En la demo, el formulario muestra una confirmación elegante. En una versión real, se conectaría a base de datos, correo o panel interno.</p>
+      </aside>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>© <span data-year></span> Real3D — Encargos premium a medida.</div>
-      <div class="footer-links">
-        <a href="index.html">Inicio</a>
-        <a href="library.html">Biblioteca</a>
-        <a href="plans.html">Planes</a>
-      </div>
-    </div>
+  <footer class="site-footer wrap">
+    <div>Real3D — formulario premium de encargos.</div>
+    <a href="admin.html" class="admin-link" title="Admin">•</a>
   </footer>
   <script src="app.js"></script>
 </body>
