@@ -4,109 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real3D — Admin</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
-  <main class="wrap section-xl admin-page">
-    <section class="admin-login glass card-pad" id="admin-login-box">
-      <div class="eyebrow">Zona admin</div>
-      <h1 class="page-title">Acceso oculto</h1>
-      <p class="lead small">Esta versión usa un login de demo para que puedas editar catálogo desde fuera sin montar backend.</p>
-      <form id="admin-login-form" class="admin-login-form">
-        <label>
-          <span>Usuario</span>
-          <input type="text" id="admin-user" placeholder="admin" required>
-        </label>
-        <label>
-          <span>Contraseña</span>
-          <input type="password" id="admin-pass" placeholder="••••••••" required>
-        </label>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </form>
-      <p class="muted tiny">Demo: usuario <strong>admin</strong> y contraseña <strong>real3d2026</strong>.</p>
-      <a href="index.html" class="btn btn-ghost">Volver</a>
+  <header class="site-header glass">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
+      <nav>
+        <a href="library.html">Biblioteca</a>
+        <a href="plans.html">Planes</a>
+        <a href="commission.html">Encargar</a>
+        <a href="quality.html">Calidad</a>
+        <a href="about.html">Empresa</a>
+      </nav>
+      <a class="btn btn-sm btn-ghost active" href="admin.html">Admin</a>
+    </div>
+  </header>
+
+  <main class="wrap page-top">
+    <section class="section-head reveal">
+      <div class="eyebrow">Acceso interno</div>
+      <h1>Gestiona el catálogo.</h1>
     </section>
 
-    <section class="admin-panel hidden" id="admin-panel">
-      <div class="page-top reveal">
-        <div>
-          <div class="eyebrow">Panel de gestión</div>
-          <h1 class="page-title">Sube assets a la biblioteca</h1>
-          <p class="lead small">Los nuevos items se guardan en el navegador con localStorage. Puedes exportar e importar un JSON para conservarlos.</p>
-        </div>
-        <div class="admin-top-actions">
-          <button class="btn btn-secondary" id="export-assets-btn" type="button">Exportar JSON</button>
-          <label class="btn btn-dark file-btn">
-            Importar JSON
-            <input type="file" id="import-assets-input" accept="application/json" hidden>
-          </label>
-          <button class="btn btn-ghost" id="admin-logout-btn" type="button">Salir</button>
-        </div>
+    <section class="admin-grid">
+      <div class="glass panel reveal">
+        <form id="adminLogin" class="order-form">
+          <div class="field">
+            <label>Usuario</label>
+            <input type="text" id="adminUser" placeholder="admin" />
+          </div>
+          <div class="field">
+            <label>Contraseña</label>
+            <input type="password" id="adminPass" placeholder="••••••••" />
+          </div>
+          <button class="btn btn-gradient" type="submit">Entrar</button>
+        </form>
       </div>
 
-      <div class="admin-layout">
-        <form class="glass card-pad admin-form" id="admin-asset-form">
-          <h2>Nuevo asset</h2>
-          <div class="form-grid">
-            <label>
-              <span>Título</span>
-              <input type="text" id="asset-title" required placeholder="Ej: Space Crate Pack">
-            </label>
-            <label>
-              <span>Categoría</span>
-              <input type="text" id="asset-category" required placeholder="Props / Sci-fi / Characters">
-            </label>
+      <div class="glass panel reveal hidden" id="adminPanel">
+        <form id="assetForm" class="order-form">
+          <div class="grid-2">
+            <div class="field"><label>Título</label><input id="assetTitle" type="text" required /></div>
+            <div class="field"><label>Etiqueta</label><input id="assetTag" type="text" placeholder="product / character" required /></div>
           </div>
-
-          <label>
-            <span>Descripción</span>
-            <textarea id="asset-description" rows="4" placeholder="Texto breve del asset"></textarea>
-          </label>
-
-          <div class="form-grid">
-            <label>
-              <span>URL del modelo .glb/.gltf</span>
-              <input type="url" id="asset-model-url" required placeholder="https://.../model.glb">
-            </label>
-            <label>
-              <span>URL de portada (opcional)</span>
-              <input type="url" id="asset-poster-url" placeholder="https://.../poster.png">
-            </label>
+          <div class="grid-2">
+            <div class="field"><label>Biblioteca</label>
+              <select id="assetPlan">
+                <option value="free">Free</option>
+                <option value="pro">Pro</option>
+                <option value="ultimate">Ultimate</option>
+              </select>
+            </div>
+            <div class="field"><label>Modelo URL (.glb/.gltf)</label><input id="assetSrc" type="url" required /></div>
           </div>
-
-          <div class="form-grid">
-            <label>
-              <span>Biblioteca</span>
-              <div class="select-wrap">
-                <select id="asset-tier" required>
-                  <option value="free">Free</option>
-                  <option value="pro">Pro</option>
-                  <option value="ultimate">Ultimate</option>
-                </select>
-              </div>
-            </label>
-            <label>
-              <span>Etiqueta</span>
-              <input type="text" id="asset-badge" placeholder="Nuevo / Popular / Pack">
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Guardar asset</button>
+          <div class="field"><label>Descripción</label><textarea id="assetDesc" rows="4"></textarea></div>
+          <button class="btn btn-primary" type="submit">Añadir asset</button>
         </form>
-
-        <section class="glass card-pad admin-list-box">
-          <h2>Assets guardados</h2>
-          <div id="admin-assets-list" class="admin-assets-list"></div>
-        </section>
+        <div id="adminList" class="admin-list"></div>
       </div>
     </section>
   </main>
+
+  <script src="models.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

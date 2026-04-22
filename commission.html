@@ -4,128 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real3D — Encargar proyecto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
-  <header class="site-header glass sticky">
-    <div class="wrap nav-row">
-      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
+  <header class="site-header glass">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
+      <nav>
         <a href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
-        <a href="commission.html" class="active">Encargar</a>
+        <a class="active" href="commission.html">Encargar</a>
+        <a href="quality.html">Calidad</a>
+        <a href="about.html">Empresa</a>
       </nav>
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="plans.html">Ver planes</a>
-        <a class="btn btn-primary" href="library.html">Explorar assets</a>
-      </div>
-      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
-    </div>
-    <div class="mobile-menu wrap">
-      <a href="index.html">Inicio</a>
-      <a href="library.html">Biblioteca</a>
-      <a href="plans.html">Planes</a>
-      <a href="commission.html">Encargar</a>
+      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
     </div>
   </header>
 
-  <main class="wrap section-xl">
-    <div class="page-top reveal">
-      <div>
-        <div class="eyebrow">Encargo a medida</div>
-        <h1 class="page-title">Pide un asset o proyecto 3D con una interfaz más premium.</h1>
-        <p class="lead small">Formulario orientado a demo visual seria. Los campos y selectores ya no parecen básicos.</p>
-      </div>
-    </div>
+  <main class="wrap page-top">
+    <section class="section-head reveal">
+      <div class="eyebrow">Encargos</div>
+      <h1>Pide un proyecto a medida.</h1>
+      <p>Props, personajes, escenarios, packs de assets o trabajos personalizados para tu pipeline.</p>
+    </section>
 
-    <section class="commission-layout reveal">
-      <form class="glass commission-form card-pad" id="commission-form">
-        <div class="form-grid">
-          <label>
-            <span>Nombre</span>
-            <input type="text" placeholder="Tu nombre o estudio" required>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" placeholder="correo@ejemplo.com" required>
-          </label>
+    <section class="form-shell glass reveal">
+      <form class="order-form" id="commissionForm">
+        <div class="field">
+          <label>Nombre del proyecto</label>
+          <input type="text" placeholder="Ej. Pack sci-fi para shooter" required />
         </div>
 
-        <div class="form-grid">
-          <label>
-            <span>Plan</span>
-            <div class="select-wrap">
-              <select required>
-                <option value="">Selecciona tu plan</option>
-                <option>Free</option>
-                <option>Pro</option>
-                <option>Ultimate</option>
-              </select>
+        <div class="grid-2">
+          <div class="field custom-select">
+            <label>Categoría</label>
+            <button type="button" class="select-trigger">Selecciona una categoría</button>
+            <div class="select-menu">
+              <button type="button" data-value="Prop individual">Prop individual</button>
+              <button type="button" data-value="Personaje">Personaje</button>
+              <button type="button" data-value="Pack de assets">Pack de assets</button>
+              <button type="button" data-value="Escenario / entorno">Escenario / entorno</button>
+              <button type="button" data-value="Otro">Otro</button>
             </div>
-          </label>
-          <label>
-            <span>Tipo de encargo</span>
-            <div class="select-wrap">
-              <select required>
-                <option value="">Selecciona una categoría</option>
-                <option>Prop individual</option>
-                <option>Personaje</option>
-                <option>Pack de assets</option>
-                <option>Escenario / entorno</option>
-                <option>Otro</option>
-              </select>
+            <input type="hidden" name="category" required />
+          </div>
+
+          <div class="field custom-select">
+            <label>Plan</label>
+            <button type="button" class="select-trigger">Selecciona plan</button>
+            <div class="select-menu">
+              <button type="button" data-value="Free">Free</button>
+              <button type="button" data-value="Pro">Pro</button>
+              <button type="button" data-value="Ultimate">Ultimate</button>
             </div>
-          </label>
+            <input type="hidden" name="plan" required />
+          </div>
         </div>
 
-        <label>
-          <span>Título del proyecto</span>
-          <input type="text" placeholder="Ejemplo: pack sci-fi para videojuego" required>
-        </label>
-
-        <label>
-          <span>Briefing</span>
-          <textarea rows="7" placeholder="Cuenta qué necesitas, estilo, uso final, referencias, plataforma, plazos y detalles técnicos."></textarea>
-        </label>
-
-        <div class="form-grid">
-          <label>
-            <span>Presupuesto</span>
-            <input type="text" placeholder="Ej: 250€ - 700€">
-          </label>
-          <label>
-            <span>Fecha objetivo</span>
-            <input type="date">
-          </label>
+        <div class="field">
+          <label>Descripción</label>
+          <textarea rows="7" placeholder="Cuenta qué necesitas, referencias visuales, estilo, plataforma, plazos y uso final." required></textarea>
         </div>
 
-        <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+        <div class="grid-2">
+          <div class="field">
+            <label>Presupuesto estimado</label>
+            <input type="text" placeholder="Ej. 250€ - 500€" />
+          </div>
+          <div class="field">
+            <label>Fecha objetivo</label>
+            <input type="date" />
+          </div>
+        </div>
+
+        <button class="btn btn-gradient btn-large" type="submit">Enviar encargo</button>
       </form>
-
-      <aside class="glass card-pad side-summary">
-        <div class="eyebrow">Resumen</div>
-        <h2>Cómo encaja cada plan</h2>
-        <ul class="bullet-list">
-          <li><strong>Free:</strong> exploras biblioteca y descubres el servicio.</li>
-          <li><strong>Pro:</strong> encargos on demand con prioridad media.</li>
-          <li><strong>Ultimate:</strong> hasta 25 encargos mensuales incluidos.</li>
-        </ul>
-        <div class="divider"></div>
-        <p class="muted">En la demo, el formulario muestra una confirmación elegante. En una versión real, se conectaría a base de datos, correo o panel interno.</p>
-      </aside>
+      <div class="success-box hidden" id="successBox">
+        <div class="eyebrow">Solicitud enviada</div>
+        <h2>Tu proyecto ya está en cola.</h2>
+        <p>En breve recibirás propuestas en función del nivel y la prioridad de tu cuenta.</p>
+        <a class="btn btn-secondary" href="library.html">Volver a biblioteca</a>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer wrap">
-    <div>Real3D — formulario premium de encargos.</div>
-    <a href="admin.html" class="admin-link" title="Admin">•</a>
-  </footer>
   <script src="app.js"></script>
 </body>
 </html>
