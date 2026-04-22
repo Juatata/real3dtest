@@ -42,7 +42,6 @@ const DEFAULT_MODELS = [
     src: "./assets/models/free/ps5_controller.glb"
   },
 
-
   // ================= PRO =================
   {
     id: "pro-1",
@@ -76,7 +75,6 @@ const DEFAULT_MODELS = [
     desc: "Set de mobiliario.",
     src: "./assets/models/pro/table_and_chairs.glb"
   },
-
 
   // ================= ULTIMATE =================
   {
@@ -119,5 +117,21 @@ const DEFAULT_MODELS = [
     desc: "Consola retro.",
     src: "./assets/models/ultimate/playstation_2.glb"
   }
-
 ];
+
+function getCustomAssets() {
+  try {
+    return JSON.parse(localStorage.getItem("real3d_assets") || "[]");
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCustomAssets(items) {
+  localStorage.setItem("real3d_assets", JSON.stringify(items));
+}
+
+window.Real3DModels = {
+  getAll: () => [...DEFAULT_MODELS, ...getCustomAssets()],
+  saveCustomAssets
+};
