@@ -5,65 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real3D — Biblioteca</title>
   <link rel="stylesheet" href="styles.css" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body>
-  <div class="bg-orb orb-a"></div>
-  <div class="bg-orb orb-c"></div>
-  <header class="site-header glass">
-    <div class="wrap nav">
-      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
-      <nav>
+<body data-page="library">
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-c"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"></span>
+        <span>Real3D</span>
+      </a>
+
+      <nav class="main-nav">
         <a class="active" href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
         <a href="commission.html">Encargar</a>
         <a href="quality.html">Calidad</a>
         <a href="about.html">Empresa</a>
       </nav>
-      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
+
+      <a href="admin.html" class="btn btn-ghost btn-sm">Admin</a>
     </div>
   </header>
 
-  <main class="wrap page-top">
+  <main class="container page-top">
     <section class="section-head reveal">
       <div class="eyebrow">Biblioteca curada</div>
       <h1>Explora, filtra, previsualiza y descarga.</h1>
-      <p>15 modelos de prueba divididos en Free, Pro y Ultimate, todos con preview interactiva funcional.</p>
+      <p>
+        La biblioteca está optimizada para cargar rápido: las tarjetas son ligeras y solo hay una preview 3D activa a la vez.
+      </p>
     </section>
 
-    <section class="toolbar glass reveal">
-      <div class="filter-group">
+    <section class="card toolbar reveal">
+      <div class="toolbar-group">
         <button class="filter-btn active" data-plan="all">Todo</button>
         <button class="filter-btn" data-plan="free">Free</button>
         <button class="filter-btn" data-plan="pro">Pro</button>
         <button class="filter-btn" data-plan="ultimate">Ultimate</button>
       </div>
-      <div class="filter-group">
+
+      <div class="toolbar-group">
         <button class="tag-btn active" data-tag="all">Todos</button>
+        <button class="tag-btn" data-tag="product">Products</button>
         <button class="tag-btn" data-tag="character">Characters</button>
         <button class="tag-btn" data-tag="vehicle">Vehicles</button>
-        <button class="tag-btn" data-tag="product">Products</button>
         <button class="tag-btn" data-tag="creature">Creatures</button>
       </div>
     </section>
 
     <section class="library-layout">
-      <aside class="glass preview-side reveal">
-        <div class="preview-side-top">
+      <aside class="card preview-panel reveal">
+        <div class="panel-top">
           <span class="pill">Preview interactiva</span>
-          <span class="pill" id="previewPlan">Free</span>
+          <span id="previewPlan" class="pill pill-accent">Free</span>
         </div>
-        <div class="preview-stage" id="previewStage"></div>
-        <div class="preview-info">
+
+        <div id="previewStage" class="preview-stage loading-state">
+          <div class="loading-copy">
+            <strong>Selecciona un asset</strong>
+            <span>La preview 3D se cargará aquí.</span>
+          </div>
+        </div>
+
+        <div class="preview-meta">
           <div>
             <h3 id="previewTitle">Selecciona un asset</h3>
-            <p id="previewText">Haz click en cualquier tarjeta para cargar la preview 3D.</p>
+            <p id="previewText">Haz click sobre una tarjeta para abrir la preview 3D.</p>
           </div>
-          <a class="btn btn-gradient" id="downloadBtn" href="#" download>Descargar</a>
+          <a id="downloadBtn" href="#" class="btn btn-gradient disabled" download>Descargar</a>
         </div>
       </aside>
 
-      <section class="asset-grid" id="assetGrid"></section>
+      <section id="assetGrid" class="asset-grid"></section>
     </section>
   </main>
 

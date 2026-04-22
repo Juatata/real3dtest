@@ -1,199 +1,288 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 80 + i * 60);
-  });
-
+document.addEventListener("DOMContentLoaded", () => {
+  initReveal();
   initCustomSelects();
   initCommissionForm();
   initLibrary();
   initAdmin();
 });
 
-function initCustomSelects(){
-  document.querySelectorAll('.custom-select').forEach(select => {
-    const trigger = select.querySelector('.select-trigger');
-    const menu = select.querySelector('.select-menu');
-    const hidden = select.querySelector('input[type="hidden"]');
-    if(!trigger || !menu || !hidden) return;
-    trigger.addEventListener('click', () => {
-      document.querySelectorAll('.custom-select').forEach(s => s !== select && s.classList.remove('open'));
-      select.classList.toggle('open');
+function initReveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        io.unobserve(entry.target);
+      }
     });
-    menu.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', () => {
+  }, { threshold: 0.12 });
+
+  items.forEach((item) => io.observe(item));
+}
+
+function initCustomSelects() {
+  document.querySelectorAll(".custom-select").forEach((select) => {
+    const trigger = select.querySelector(".select-trigger");
+    const menu = select.querySelector(".select-menu");
+    const hidden = select.querySelector('input[type="hidden"]');
+
+    if (!trigger || !menu || !hidden) return;
+
+    trigger.addEventListener("click", () => {
+      document.querySelectorAll(".custom-select").forEach((s) => {
+        if (s !== select) s.classList.remove("open");
+      });
+      select.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
         hidden.value = btn.dataset.value;
         trigger.textContent = btn.dataset.value;
-        select.classList.remove('open');
+        select.classList.remove("open");
       });
     });
   });
-  document.addEventListener('click', e => {
-    if(!e.target.closest('.custom-select')){
-      document.querySelectorAll('.custom-select').forEach(s => s.classList.remove('open'));
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".custom-select")) {
+      document.querySelectorAll(".custom-select").forEach((s) => s.classList.remove("open"));
     }
   });
 }
 
-function initCommissionForm(){
-  const form = document.getElementById('commissionForm');
-  const success = document.getElementById('successBox');
-  if(!form || !success) return;
-  form.addEventListener('submit', e => {
+function initCommissionForm() {
+  const form = document.getElementById("commissionForm");
+  const success = document.getElementById("successBox");
+  if (!form || !success) return;
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    form.classList.add('hidden');
-    success.classList.remove('hidden');
+    form.classList.add("hidden");
+    success.classList.remove("hidden");
   });
 }
 
-function initLibrary(){
-  const grid = document.getElementById('assetGrid');
-  const stage = document.getElementById('previewStage');
-  if(!grid || !stage || !window.Real3DModels) return;
+function initLibrary() {
+  const grid = document.getElementById("assetGrid");
+  const stage = document.getElementById("previewStage");
+  if (!grid || !stage || !window.Real3DModels) return;
 
-  const title = document.getElementById('previewTitle');
-  const text = document.getElementById('previewText');
-  const planEl = document.getElementById('previewPlan');
-  const downloadBtn = document.getElementById('downloadBtn');
+  const title = document.getElementById("previewTitle");
+  const text = document.getElementById("previewText");
+  const planEl = document.getElementById("previewPlan");
+  const downloadBtn = document.getElementById("downloadBtn");
 
   const params = new URLSearchParams(window.location.search);
-  let currentPlan = params.get('plan') || 'all';
-  let currentTag = 'all';
+  let currentPlan = params.get("plan") || "all";
+  let currentTag = "all";
   const allAssets = window.Real3DModels.getAll();
+  let modelViewerLoaded = false;
 
-  function renderCards(){
-    grid.innerHTML = '';
-    const filtered = allAssets.filter(item => {
-      const planMatch = currentPlan === 'all' || item.plan === currentPlan;
-      const tagMatch = currentTag === 'all' || item.tag === currentTag;
+  syncActiveButtons(currentPlan, currentTag);
+  renderCards();
+
+  function renderCards() {
+    const filtered = allAssets.filter((item) => {
+      const planMatch = currentPlan === "all" || item.plan === currentPlan;
+      const tagMatch = currentTag === "all" || item.tag === currentTag;
       return planMatch && tagMatch;
     });
 
+    grid.innerHTML = "";
     filtered.forEach((item, index) => {
-      const card = document.createElement('article');
-      card.className = 'asset-card reveal visible';
+      const card = document.createElement("article");
+      card.className = "asset-card";
       card.innerHTML = `
-        <div class="asset-thumb">
-          <model-viewer src="${item.src}" alt="${item.title}" camera-controls auto-rotate style="width:100%;height:100%;"></model-viewer>
+        <div class="asset-thumb asset-thumb-${item.plan}">
+          <div class="asset-thumb-core">${item.title.charAt(0)}</div>
         </div>
-        <div class="asset-meta">
+        <div class="asset-card-top">
           <div>
-            <h4>${item.title}</h4>
+            <h3>${item.title}</h3>
             <p>${item.desc}</p>
           </div>
-          <span class="pill ${item.plan === 'pro' ? 'pro' : item.plan === 'ultimate' ? 'ultimate' : ''}">${capitalize(item.plan)}</span>
+          <span class="pill ${pillClass(item.plan)}">${capitalize(item.plan)}</span>
         </div>
         <div class="asset-tags">
           <span class="asset-tag">${item.tag}</span>
-          <span class="asset-tag">preview 3D</span>
+          <span class="asset-tag">preview</span>
           <span class="asset-tag">download</span>
         </div>
       `;
-      card.addEventListener('click', () => loadPreview(item));
+      card.addEventListener("click", () => loadPreview(item));
       grid.appendChild(card);
-      if(index === 0) loadPreview(item);
+
+      if (index === 0) {
+        loadPreview(item);
+      }
     });
+
+    if (!filtered.length) {
+      stage.innerHTML = `
+        <div class="loading-copy">
+          <strong>No hay resultados</strong>
+          <span>Prueba otro filtro o categoría.</span>
+        </div>
+      `;
+      title.textContent = "Sin resultados";
+      text.textContent = "No hay assets disponibles con esta combinación.";
+      planEl.textContent = "—";
+      planEl.className = "pill";
+      downloadBtn.href = "#";
+      downloadBtn.classList.add("disabled");
+    }
   }
 
-  function loadPreview(item){
+  async function ensureModelViewer() {
+    if (modelViewerLoaded || window.customElements.get("model-viewer")) {
+      modelViewerLoaded = true;
+      return;
+    }
+    await import("https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js");
+    modelViewerLoaded = true;
+  }
+
+  async function loadPreview(item) {
+    stage.classList.add("loading-state");
     stage.innerHTML = `
-      <model-viewer
-        src="${item.src}"
-        alt="${item.title}"
-        camera-controls
-        auto-rotate
-        shadow-intensity="1"
-        exposure="1"
-        style="width:100%;height:100%;"
-      ></model-viewer>`;
+      <div class="loading-copy">
+        <strong>Cargando preview 3D...</strong>
+        <span>${item.title}</span>
+      </div>
+    `;
+
     title.textContent = item.title;
     text.textContent = item.desc;
     planEl.textContent = capitalize(item.plan);
-    planEl.className = 'pill ' + (item.plan === 'pro' ? 'pro' : item.plan === 'ultimate' ? 'ultimate' : '');
+    planEl.className = "pill " + pillClass(item.plan);
     downloadBtn.href = item.src;
-    downloadBtn.setAttribute('download', '');
+    downloadBtn.classList.remove("disabled");
+
+    try {
+      await ensureModelViewer();
+      stage.innerHTML = `
+        <model-viewer
+          src="${item.src}"
+          alt="${item.title}"
+          camera-controls
+          auto-rotate
+          shadow-intensity="1"
+          exposure="1"
+          touch-action="pan-y"
+          style="width:100%;height:100%;background:transparent;"
+        ></model-viewer>
+      `;
+    } catch (err) {
+      stage.innerHTML = `
+        <div class="loading-copy">
+          <strong>No se pudo cargar la preview</strong>
+          <span>El asset sigue disponible para descarga.</span>
+        </div>
+      `;
+    } finally {
+      stage.classList.remove("loading-state");
+    }
   }
 
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    if(btn.dataset.plan === currentPlan) btn.classList.add('active');
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
       currentPlan = btn.dataset.plan;
-      renderCards();
-    });
-  });
-  document.querySelectorAll('.tag-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentTag = btn.dataset.tag;
+      syncActiveButtons(currentPlan, currentTag);
       renderCards();
     });
   });
 
-  renderCards();
+  document.querySelectorAll(".tag-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentTag = btn.dataset.tag;
+      syncActiveButtons(currentPlan, currentTag);
+      renderCards();
+    });
+  });
+
+  function syncActiveButtons(plan, tag) {
+    document.querySelectorAll(".filter-btn").forEach((b) => {
+      b.classList.toggle("active", b.dataset.plan === plan);
+    });
+    document.querySelectorAll(".tag-btn").forEach((b) => {
+      b.classList.toggle("active", b.dataset.tag === tag);
+    });
+  }
 }
 
-function initAdmin(){
-  const login = document.getElementById('adminLogin');
-  const panel = document.getElementById('adminPanel');
-  const list = document.getElementById('adminList');
-  const assetForm = document.getElementById('assetForm');
-  if(!login || !panel || !window.Real3DModels) return;
+function initAdmin() {
+  const login = document.getElementById("adminLogin");
+  const panel = document.getElementById("adminPanel");
+  const assetForm = document.getElementById("assetForm");
+  const adminList = document.getElementById("adminList");
+  if (!login || !panel || !window.Real3DModels) return;
 
-  const user = document.getElementById('adminUser');
-  const pass = document.getElementById('adminPass');
+  const user = document.getElementById("adminUser");
+  const pass = document.getElementById("adminPass");
 
-  login.addEventListener('submit', e => {
+  login.addEventListener("submit", (e) => {
     e.preventDefault();
-    if(user.value === 'admin' && pass.value === 'real3d2026'){
-      login.parentElement.classList.add('hidden');
-      panel.classList.remove('hidden');
+    if (user.value === "admin" && pass.value === "real3d2026") {
+      login.parentElement.classList.add("hidden");
+      panel.classList.remove("hidden");
       refreshAdminList();
     } else {
-      alert('Credenciales incorrectas');
+      alert("Credenciales incorrectas");
     }
   });
 
-  assetForm.addEventListener('submit', e => {
+  assetForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const items = JSON.parse(localStorage.getItem('real3d_assets') || '[]');
+    const items = JSON.parse(localStorage.getItem("real3d_assets") || "[]");
     items.push({
-      id: 'custom-' + Date.now(),
-      title: document.getElementById('assetTitle').value,
-      plan: document.getElementById('assetPlan').value,
-      tag: document.getElementById('assetTag').value,
-      desc: document.getElementById('assetDesc').value || 'Asset añadido desde admin.',
-      src: document.getElementById('assetSrc').value
+      id: "custom-" + Date.now(),
+      title: document.getElementById("assetTitle").value,
+      plan: document.getElementById("assetPlan").value,
+      tag: document.getElementById("assetTag").value,
+      desc: document.getElementById("assetDesc").value || "Asset añadido desde admin.",
+      src: document.getElementById("assetSrc").value
     });
     window.Real3DModels.saveCustomAssets(items);
     assetForm.reset();
     refreshAdminList();
   });
 
-  function refreshAdminList(){
-    const items = JSON.parse(localStorage.getItem('real3d_assets') || '[]');
-    list.innerHTML = '<h3>Assets añadidos</h3>';
-    if(!items.length){
-      list.innerHTML += '<p class="lead">Todavía no hay assets personalizados.</p>';
+  function refreshAdminList() {
+    const items = JSON.parse(localStorage.getItem("real3d_assets") || "[]");
+    adminList.innerHTML = "<h3>Assets añadidos</h3>";
+    if (!items.length) {
+      adminList.innerHTML += "<p class='muted'>Todavía no hay assets personalizados.</p>";
       return;
     }
-    items.forEach(item => {
-      const row = document.createElement('div');
-      row.className = 'admin-item';
-      row.innerHTML = `<div><strong>${item.title}</strong><br><span class="lead">${capitalize(item.plan)} · ${item.tag}</span></div>
-      <button class="btn btn-sm btn-ghost">Eliminar</button>`;
-      row.querySelector('button').addEventListener('click', () => {
-        const next = items.filter(x => x.id !== item.id);
+
+    items.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "admin-item";
+      row.innerHTML = `
+        <div>
+          <strong>${item.title}</strong><br>
+          <span class="muted">${capitalize(item.plan)} · ${item.tag}</span>
+        </div>
+        <button class="btn btn-sm btn-ghost">Eliminar</button>
+      `;
+      row.querySelector("button").addEventListener("click", () => {
+        const next = items.filter((x) => x.id !== item.id);
         window.Real3DModels.saveCustomAssets(next);
         refreshAdminList();
       });
-      list.appendChild(row);
+      adminList.appendChild(row);
     });
   }
 }
 
-function capitalize(v){
+function capitalize(v) {
   return v.charAt(0).toUpperCase() + v.slice(1);
+}
+
+function pillClass(plan) {
+  if (plan === "pro") return "pill-pro";
+  if (plan === "ultimate") return "pill-ultimate";
+  return "pill-accent";
 }

@@ -7,81 +7,74 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orb orb-b"></div>
-  <div class="bg-orb orb-c"></div>
-  <header class="site-header glass">
-    <div class="wrap nav">
-      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
-      <nav>
+  <div class="bg-glow glow-b"></div>
+  <div class="bg-glow glow-c"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"></span>
+        <span>Real3D</span>
+      </a>
+
+      <nav class="main-nav">
         <a href="library.html">Biblioteca</a>
         <a class="active" href="plans.html">Planes</a>
         <a href="commission.html">Encargar</a>
         <a href="quality.html">Calidad</a>
         <a href="about.html">Empresa</a>
       </nav>
-      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
+
+      <a href="admin.html" class="btn btn-ghost btn-sm">Admin</a>
     </div>
   </header>
 
-  <main class="wrap page-top">
+  <main class="container page-top">
     <section class="section-head reveal">
       <div class="eyebrow">Pricing</div>
-      <h1>Elige la escala que encaja contigo.</h1>
-      <p>Desde acceso gratuito hasta biblioteca total con 25 encargos mensuales.</p>
+      <h1>Planes claros, escalables y visualmente distintos.</h1>
+      <p>Free para entrar, Pro para subir de nivel y Ultimate para operar con biblioteca completa y encargos incluidos.</p>
     </section>
 
     <section class="pricing-grid">
-      <article class="price-card glass reveal">
+      <article class="card price-card reveal">
         <span class="pill">Free</span>
         <h2>0€</h2>
-        <p class="price-desc">Entrada a la plataforma y descarga de la biblioteca gratuita.</p>
-        <ul class="price-list">
-          <li>Acceso a 5 modelos Free</li>
+        <p class="price-sub">Entrada limpia a la plataforma.</p>
+        <ul>
+          <li>5 assets Free</li>
           <li>Preview 3D interactiva</li>
-          <li>Descarga directa de assets Free</li>
-          <li>Navegación y filtros básicos</li>
+          <li>Descarga de assets Free</li>
+          <li>Filtros básicos</li>
         </ul>
-        <a class="btn btn-secondary" href="library.html?plan=free">Empezar gratis</a>
+        <a href="library.html?plan=free" class="btn btn-secondary">Empezar gratis</a>
       </article>
 
-      <article class="price-card glass featured reveal">
-        <span class="pill pro">Pro</span>
-        <h2>19€<small>/mes</small></h2>
-        <p class="price-desc">Biblioteca premium desbloqueada con calidad visual claramente superior.</p>
-        <ul class="price-list">
+      <article class="card price-card featured reveal">
+        <span class="pill pill-pro">Pro</span>
+        <h2>19€ <small>/mes</small></h2>
+        <p class="price-sub">Biblioteca premium con más impacto visual.</p>
+        <ul>
           <li>Todo lo incluido en Free</li>
-          <li>Acceso a los 5 modelos Pro</li>
+          <li>5 assets Pro</li>
           <li>Catálogo premium ampliado</li>
           <li>Prioridad media en encargos</li>
         </ul>
-        <a class="btn btn-gradient" href="library.html?plan=pro">Pasar a Pro</a>
+        <a href="library.html?plan=pro" class="btn btn-gradient">Pasar a Pro</a>
       </article>
 
-      <article class="price-card glass reveal">
-        <span class="pill ultimate">Ultimate</span>
-        <h2>75€<small>/mes</small></h2>
-        <p class="price-desc">La opción más completa para estudios, creadores y equipos con volumen.</p>
-        <ul class="price-list">
-          <li>Biblioteca completa Free + Pro + Ultimate</li>
-          <li>Acceso a los 5 modelos Ultimate</li>
-          <li>Hasta 25 encargos mensuales</li>
-          <li>Prioridad máxima y soporte preferente</li>
+      <article class="card price-card reveal">
+        <span class="pill pill-ultimate">Ultimate</span>
+        <h2>75€ <small>/mes</small></h2>
+        <p class="price-sub">La opción completa para estudios y creadores exigentes.</p>
+        <ul>
+          <li>Biblioteca Free + Pro + Ultimate</li>
+          <li>5 assets Ultimate</li>
+          <li>Hasta 25 encargos al mes</li>
+          <li>Prioridad máxima y trato preferente</li>
         </ul>
-        <a class="btn btn-primary" href="commission.html">Elegir Ultimate</a>
+        <a href="commission.html" class="btn btn-primary">Elegir Ultimate</a>
       </article>
-    </section>
-
-    <section class="section wrap">
-      <div class="cta glass reveal">
-        <div>
-          <div class="eyebrow">Escala visual</div>
-          <h2>Free descubre. Pro mejora. Ultimate resuelve.</h2>
-        </div>
-        <div class="cta-actions">
-          <a class="btn btn-gradient" href="quality.html">Comparar calidad</a>
-          <a class="btn btn-ghost" href="commission.html">Encargar proyecto</a>
-        </div>
-      </div>
     </section>
   </main>
 
