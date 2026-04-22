@@ -6,12 +6,15 @@
   <title>Real3D — Encargar proyecto</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-mesh"></div>
   <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
+  <div class="bg-orb orb-c"></div>
+
   <header class="site-header glass sticky">
     <div class="wrap nav-row">
       <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
@@ -22,7 +25,7 @@
         <a href="commission.html" class="active">Encargar</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="plans.html">Ver planes</a>
+        <a class="btn btn-ghost" href="plans.html">Planes</a>
         <a class="btn btn-primary" href="library.html">Explorar assets</a>
       </div>
       <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
@@ -39,13 +42,13 @@
     <div class="page-top reveal">
       <div>
         <div class="eyebrow">Encargo a medida</div>
-        <h1 class="page-title">Pide un asset o proyecto 3D con una interfaz más premium.</h1>
-        <p class="lead small">Formulario orientado a demo visual seria. Los campos y selectores ya no parecen básicos.</p>
+        <h1 class="page-title">Define tu proyecto y envía el briefing con una interfaz limpia y premium.</h1>
+        <p class="lead small">Personaliza el tipo de encargo, plan, presupuesto y plazos con una experiencia más cuidada visualmente.</p>
       </div>
     </div>
 
     <section class="commission-layout reveal">
-      <form class="glass commission-form card-pad" id="commission-form">
+      <form class="glass commission-form card-pad glow-card" id="commission-form">
         <div class="form-grid">
           <label>
             <span>Nombre</span>
@@ -60,26 +63,28 @@
         <div class="form-grid">
           <label>
             <span>Plan</span>
-            <div class="select-wrap">
-              <select required>
-                <option value="">Selecciona tu plan</option>
-                <option>Free</option>
-                <option>Pro</option>
-                <option>Ultimate</option>
-              </select>
+            <div class="custom-select" data-name="plan" data-placeholder="Selecciona tu plan">
+              <input type="hidden" name="plan" required>
+              <button type="button" class="custom-select-trigger">Selecciona tu plan</button>
+              <div class="custom-select-menu">
+                <button type="button" class="custom-option" data-value="Free">Free</button>
+                <button type="button" class="custom-option" data-value="Pro">Pro</button>
+                <button type="button" class="custom-option" data-value="Ultimate">Ultimate</button>
+              </div>
             </div>
           </label>
           <label>
             <span>Tipo de encargo</span>
-            <div class="select-wrap">
-              <select required>
-                <option value="">Selecciona una categoría</option>
-                <option>Prop individual</option>
-                <option>Personaje</option>
-                <option>Pack de assets</option>
-                <option>Escenario / entorno</option>
-                <option>Otro</option>
-              </select>
+            <div class="custom-select" data-name="tipo" data-placeholder="Selecciona una categoría">
+              <input type="hidden" name="tipo" required>
+              <button type="button" class="custom-select-trigger">Selecciona una categoría</button>
+              <div class="custom-select-menu">
+                <button type="button" class="custom-option" data-value="Prop individual">Prop individual</button>
+                <button type="button" class="custom-option" data-value="Personaje">Personaje</button>
+                <button type="button" class="custom-option" data-value="Pack de assets">Pack de assets</button>
+                <button type="button" class="custom-option" data-value="Escenario / entorno">Escenario / entorno</button>
+                <button type="button" class="custom-option" data-value="Otro">Otro</button>
+              </div>
             </div>
           </label>
         </div>
@@ -108,22 +113,22 @@
         <button class="btn btn-primary" type="submit">Enviar solicitud</button>
       </form>
 
-      <aside class="glass card-pad side-summary">
-        <div class="eyebrow">Resumen</div>
-        <h2>Cómo encaja cada plan</h2>
+      <aside class="glass card-pad side-summary glow-card">
+        <div class="eyebrow">Resumen del servicio</div>
+        <h2>Qué incluye cada ruta</h2>
         <ul class="bullet-list">
-          <li><strong>Free:</strong> exploras biblioteca y descubres el servicio.</li>
-          <li><strong>Pro:</strong> encargos on demand con prioridad media.</li>
-          <li><strong>Ultimate:</strong> hasta 25 encargos mensuales incluidos.</li>
+          <li><strong>Free:</strong> acceso inicial a biblioteca y exploración del catálogo.</li>
+          <li><strong>Pro:</strong> biblioteca ampliada y encargos on demand.</li>
+          <li><strong>Ultimate:</strong> prioridad alta y hasta 25 encargos mensuales.</li>
         </ul>
         <div class="divider"></div>
-        <p class="muted">En la demo, el formulario muestra una confirmación elegante. En una versión real, se conectaría a base de datos, correo o panel interno.</p>
+        <p class="muted">Cuanto más preciso sea el briefing, mejor encajará la propuesta con el estilo, el plazo y el uso final del proyecto.</p>
       </aside>
     </section>
   </main>
 
   <footer class="site-footer wrap">
-    <div>Real3D — formulario premium de encargos.</div>
+    <div>Real3D — encargos a medida</div>
     <a href="admin.html" class="admin-link" title="Admin">•</a>
   </footer>
   <script src="app.js"></script>

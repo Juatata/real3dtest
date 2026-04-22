@@ -1,67 +1,24 @@
 const DEFAULT_ASSETS = [
-  {
-    id: 'duck-free',
-    title: 'Duck Demo Asset',
-    description: 'Modelo clásico de demostración para la biblioteca Free.',
-    category: 'Props',
-    badge: 'Demo',
-    tier: 'free',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Duck/screenshot/screenshot.png'
-  },
-  {
-    id: 'avocado-free',
-    title: 'Avocado Asset',
-    description: 'Otro asset de muestra listo para previsualizar y descargar.',
-    category: 'Food',
-    badge: 'Free',
-    tier: 'free',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Avocado/glTF-Binary/Avocado.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/screenshot/screenshot.png'
-  },
-  {
-    id: 'helmet-pro',
-    title: 'Damaged Helmet',
-    description: 'Asset premium de ejemplo visible para el catálogo Pro.',
-    category: 'Hard Surface',
-    badge: 'Premium',
-    tier: 'pro',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/screenshot/screenshot.png'
-  },
-  {
-    id: 'barramundi-pro',
-    title: 'Barramundi Fish',
-    description: 'Preview interactiva para reforzar el valor del plan Pro.',
-    category: 'Creatures',
-    badge: 'Nuevo',
-    tier: 'pro',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BarramundiFish/glTF-Binary/BarramundiFish.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/screenshot/screenshot.png'
-  },
-  {
-    id: 'boom-ultimate',
-    title: 'Boom Box Ultimate',
-    description: 'Asset destacado para la biblioteca más alta.',
-    category: 'Retro Props',
-    badge: 'Ultimate',
-    tier: 'ultimate',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BoomBox/glTF-Binary/BoomBox.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/screenshot/screenshot.png'
-  },
-  {
-    id: 'flight-ultimate',
-    title: 'Flight Helmet',
-    description: 'Ejemplo premium para completar el nivel Ultimate.',
-    category: 'Characters / Gear',
-    badge: 'Studio',
-    tier: 'ultimate',
-    modelUrl: 'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb',
-    posterUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/FlightHelmet/screenshot/screenshot.png'
-  }
+  { id:'free-duck', title:'Duck Classic', description:'Prop limpio y ligero para pruebas y escenas básicas.', category:'props', badge:'Free', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Duck/screenshot/screenshot.png' },
+  { id:'free-helmet', title:'Flight Helmet Lite', description:'Asset de gear con materiales bien definidos.', category:'gear', badge:'Popular', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/FlightHelmet/screenshot/screenshot.png' },
+  { id:'free-lantern', title:'Lantern', description:'Prop ambiental ideal para escenas oscuras o medievales.', category:'props', badge:'New', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Lantern/glTF-Binary/Lantern.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Lantern/screenshot/screenshot.png' },
+  { id:'free-sponza', title:'Sponza Sample', description:'Entorno clásico para mostrar composición y escala.', category:'environment', badge:'Scene', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Sponza/glTF-Binary/Sponza.glb', posterUrl:'' },
+  { id:'free-avocado', title:'Avocado Pack', description:'Modelo sencillo con carácter y acabado brillante.', category:'props', badge:'Starter', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Avocado/glTF-Binary/Avocado.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/screenshot/screenshot.png' },
+
+  { id:'pro-boombox', title:'Boom Box', description:'Prop retro de más peso visual para colecciones Pro.', category:'props', badge:'Pro', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BoomBox/glTF-Binary/BoomBox.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/screenshot/screenshot.png' },
+  { id:'pro-waterbottle', title:'Water Bottle', description:'Producto estilizado para visualización y prototipado.', category:'props', badge:'Clean', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/WaterBottle/glTF-Binary/WaterBottle.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/WaterBottle/screenshot/screenshot.png' },
+  { id:'pro-cesium', title:'Cesium Milk Truck', description:'Vehículo completo con presencia premium.', category:'vehicles', badge:'Vehicle', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/CesiumMilkTruck/glTF-Binary/CesiumMilkTruck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CesiumMilkTruck/screenshot/screenshot.png' },
+  { id:'pro-office', title:'Office Chair', description:'Asset funcional de interior para escenas de producto.', category:'environment', badge:'Interior', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/OfficeChair/glTF-Binary/OfficeChair.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/OfficeChair/screenshot/screenshot.png' },
+  { id:'pro-rigged', title:'Rigged Figure', description:'Figura articulada para presentaciones y bloques de animación.', category:'characters', badge:'Rigged', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RiggedSimple/glTF-Binary/RiggedSimple.glb', posterUrl:'' },
+
+  { id:'ul-robot', title:'Robot Expressive', description:'Modelo showcase con fuerte identidad visual.', category:'characters', badge:'Ultimate', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RobotExpressive/glTF-Binary/RobotExpressive.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/RobotExpressive/screenshot/screenshot.png' },
+  { id:'ul-fish', title:'Barramundi Fish', description:'Pieza de showcase orgánica para biblioteca avanzada.', category:'showcase', badge:'Organic', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BarramundiFish/glTF-Binary/BarramundiFish.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/screenshot/screenshot.png' },
+  { id:'ul-litigator', title:'Litigator', description:'Vehicle / craft de alto impacto para portada o demo.', category:'showcase', badge:'High-end', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/LittlestTokyo/glTF-Binary/LittlestTokyo.glb', posterUrl:'' },
+  { id:'ul-damaged', title:'Damaged Helmet', description:'Asset hero con mucho detalle para renders y campañas.', category:'characters', badge:'Hero', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/screenshot/screenshot.png' },
+  { id:'ul-antique', title:'Antique Camera', description:'Prop premium con aire editorial y acabado elegante.', category:'environment', badge:'Editorial', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/AntiqueCamera/glTF-Binary/AntiqueCamera.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AntiqueCamera/screenshot/screenshot.png' }
 ];
 
-const STORAGE_KEY = 'real3d_assets_v2';
+const STORAGE_KEY = 'real3d_assets_v3';
 const ADMIN_KEY = 'real3d_admin_session';
 
 function getAssets() {
@@ -74,19 +31,13 @@ function getAssets() {
     return DEFAULT_ASSETS;
   }
 }
-
-function saveAssets(assets) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(assets));
-}
+function saveAssets(assets) { localStorage.setItem(STORAGE_KEY, JSON.stringify(assets)); }
+function safeFilename(text) { return (text || 'asset').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 
 function initReveal() {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('in-view');
-    });
-  }, { threshold: 0.15 });
+  const io = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('in-view')), { threshold: 0.12 });
   els.forEach(el => io.observe(el));
 }
 
@@ -106,7 +57,8 @@ function createBadge(text, cls = '') {
 
 function assetCard(asset, downloadable) {
   const card = document.createElement('article');
-  card.className = 'glass asset-card';
+  card.className = 'glass asset-card glow-card';
+  card.dataset.category = (asset.category || 'asset').toLowerCase();
   const tierLabel = asset.tier === 'free' ? 'Free' : asset.tier === 'pro' ? 'Pro' : 'Ultimate';
   card.innerHTML = `
     <model-viewer class="asset-viewer" src="${asset.modelUrl}" poster="${asset.posterUrl || ''}" camera-controls auto-rotate exposure="1.1" environment-image="neutral"></model-viewer>
@@ -121,7 +73,7 @@ function assetCard(asset, downloadable) {
   `;
   const badges = card.querySelector('.badges');
   badges.appendChild(createBadge(tierLabel, `tier-${asset.tier}`));
-  badges.appendChild(createBadge(asset.category || 'Asset'));
+  badges.appendChild(createBadge(asset.category || 'asset'));
   if (asset.badge) badges.appendChild(createBadge(asset.badge));
 
   const actions = card.querySelector('.asset-actions');
@@ -141,10 +93,6 @@ function assetCard(asset, downloadable) {
   return card;
 }
 
-function safeFilename(text) {
-  return (text || 'asset').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
 function renderLibrary() {
   const freeGrid = document.getElementById('free-grid');
   const proGrid = document.getElementById('pro-grid');
@@ -153,11 +101,31 @@ function renderLibrary() {
 
   const assets = getAssets();
   const tiers = { free: [], pro: [], ultimate: [] };
-  assets.forEach(a => { if (tiers[a.tier]) tiers[a.tier].push(a); });
+  assets.forEach(a => tiers[a.tier]?.push(a));
 
   if (freeGrid) tiers.free.forEach(asset => freeGrid.appendChild(assetCard(asset, true)));
   if (proGrid) tiers.pro.forEach(asset => proGrid.appendChild(assetCard(asset, false)));
   if (ultimateGrid) tiers.ultimate.forEach(asset => ultimateGrid.appendChild(assetCard(asset, false)));
+}
+
+function initFilters() {
+  document.querySelectorAll('[data-filter-bar]').forEach((bar) => {
+    const tier = bar.dataset.filterBar;
+    const section = document.querySelector(`[data-tier-section="${tier}"]`);
+    if (!section) return;
+    const cards = () => [...section.querySelectorAll('.asset-card')];
+    bar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-chip');
+      if (!btn) return;
+      bar.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+      btn.classList.add('active');
+      const value = btn.dataset.filter;
+      cards().forEach(card => {
+        const ok = value === 'all' || card.dataset.category.includes(value);
+        card.classList.toggle('hidden', !ok);
+      });
+    });
+  });
 }
 
 async function forceDownload(url, filename) {
@@ -175,7 +143,7 @@ async function forceDownload(url, filename) {
     showToast('Descarga iniciada.');
   } catch {
     window.open(url, '_blank');
-    showToast('No se pudo forzar la descarga. Se abrió el archivo en otra pestaña.');
+    showToast('Se abrió el archivo en otra pestaña.');
   }
 }
 
@@ -202,8 +170,55 @@ function initCommissionForm() {
   if (!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast('Solicitud enviada en modo demo.');
+    showToast('Solicitud enviada correctamente.');
     form.reset();
+    document.querySelectorAll('.custom-select').forEach(resetCustomSelect);
+  });
+}
+
+function resetCustomSelect(select) {
+  const trigger = select.querySelector('.custom-select-trigger');
+  const hidden = select.querySelector('input[type="hidden"]');
+  const placeholder = select.dataset.placeholder || 'Seleccionar';
+  if (hidden) hidden.value = hidden.id === 'asset-tier' ? 'free' : '';
+  trigger.textContent = hidden?.id === 'asset-tier' ? 'Free' : placeholder;
+  select.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+  if (hidden?.id === 'asset-tier') {
+    const first = select.querySelector('.custom-option[data-value="free"]');
+    first?.classList.add('selected');
+  }
+}
+
+function initCustomSelects() {
+  const selects = document.querySelectorAll('.custom-select');
+  if (!selects.length) return;
+
+  selects.forEach((select) => {
+    const trigger = select.querySelector('.custom-select-trigger');
+    const hidden = select.querySelector('input[type="hidden"]');
+    const options = select.querySelectorAll('.custom-option');
+
+    trigger?.addEventListener('click', () => {
+      document.querySelectorAll('.custom-select.open').forEach(other => other !== select && other.classList.remove('open'));
+      select.classList.toggle('open');
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const value = option.dataset.value || option.textContent.trim();
+        if (hidden) hidden.value = value;
+        trigger.textContent = option.textContent.trim();
+        options.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+        select.classList.remove('open');
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.custom-select')) {
+      document.querySelectorAll('.custom-select.open').forEach(select => select.classList.remove('open'));
+    }
   });
 }
 
@@ -218,7 +233,7 @@ function renderAdminList() {
     row.innerHTML = `
       <div class="admin-list-meta">
         <h4>${asset.title}</h4>
-        <p>${asset.tier.toUpperCase()} · ${asset.category || 'Asset'}</p>
+        <p>${asset.tier.toUpperCase()} · ${asset.category || 'asset'}</p>
       </div>
       <button class="mini-btn danger" data-delete-id="${asset.id}">Eliminar</button>
     `;
@@ -269,18 +284,21 @@ function initAdmin() {
       const newAsset = {
         id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()),
         title: document.getElementById('asset-title').value.trim(),
-        category: document.getElementById('asset-category').value.trim(),
+        category: document.getElementById('asset-category').value.trim().toLowerCase(),
         description: document.getElementById('asset-description').value.trim(),
         modelUrl: document.getElementById('asset-model-url').value.trim(),
         posterUrl: document.getElementById('asset-poster-url').value.trim(),
-        tier: document.getElementById('asset-tier').value,
+        tier: document.getElementById('asset-tier').value || 'free',
         badge: document.getElementById('asset-badge').value.trim()
       };
       assets.unshift(newAsset);
       saveAssets(assets);
       assetForm.reset();
+      document.querySelectorAll('.custom-select').forEach(select => {
+        if (select.querySelector('#asset-tier')) resetCustomSelect(select);
+      });
       renderAdminList();
-      showToast('Asset guardado en el navegador.');
+      showToast('Asset guardado.');
     });
   }
 
@@ -318,11 +336,9 @@ function initAdmin() {
         if (!Array.isArray(parsed)) throw new Error('bad format');
         saveAssets(parsed);
         renderAdminList();
-        showToast('JSON importado correctamente.');
+        showToast('Catálogo importado.');
       } catch {
         showToast('No se pudo importar el JSON.');
-      } finally {
-        importInput.value = '';
       }
     });
   }
@@ -331,8 +347,10 @@ function initAdmin() {
 document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initMobileMenu();
-  initDownloads();
+  initCustomSelects();
   renderLibrary();
+  initFilters();
+  initDownloads();
   initCommissionForm();
   initAdmin();
 });

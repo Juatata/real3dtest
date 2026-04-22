@@ -6,12 +6,15 @@
   <title>Real3D — Planes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-mesh"></div>
   <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
+  <div class="bg-orb orb-c"></div>
+
   <header class="site-header glass sticky">
     <div class="wrap nav-row">
       <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
@@ -23,7 +26,7 @@
       </nav>
       <div class="nav-actions">
         <a class="btn btn-ghost" href="library.html">Biblioteca</a>
-        <a class="btn btn-primary" href="commission.html">Pedir encargo</a>
+        <a class="btn btn-primary" href="commission.html">Encargar</a>
       </div>
       <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
     </div>
@@ -38,62 +41,60 @@
   <main class="wrap section-xl">
     <div class="page-top reveal center">
       <div class="eyebrow">Planes y precios</div>
-      <h1 class="page-title">Tres niveles claros para que el modelo freemium se entienda al instante.</h1>
-      <p class="lead small">Precios planteados para que se vea lógica de captación, recurrencia y upselling.</p>
+      <h1 class="page-title">Tres niveles pensados para crecer desde la exploración hasta el uso intensivo.</h1>
+      <p class="lead small">Free abre la puerta, Pro amplía el catálogo y Ultimate concentra todo el valor para equipos y estudios.</p>
     </div>
 
     <section class="pricing-grid reveal">
-      <article class="price-card glass">
+      <article class="price-card glass glow-card">
         <div class="price-top"><span class="tag">Free</span></div>
         <h2>Free</h2>
         <div class="price-line">0€ <span>/ mes</span></div>
         <ul class="price-list">
-          <li>Acceso a la biblioteca Free</li>
-          <li>Preview 3D de los assets</li>
-          <li>Descarga de modelos gratuitos</li>
-          <li>Exploración de catálogo premium</li>
+          <li>Acceso a 5 assets de biblioteca Free</li>
+          <li>Preview 3D interactiva</li>
+          <li>Descarga directa de modelos gratuitos</li>
+          <li>Exploración del catálogo premium</li>
         </ul>
         <a class="btn btn-secondary full" href="library.html">Entrar gratis</a>
       </article>
 
-      <article class="price-card glass featured">
-        <div class="price-top"><span class="tag tag-bright">Más recomendado</span></div>
+      <article class="price-card glass featured glow-card">
+        <div class="price-top"><span class="tag tag-bright">Recomendado</span></div>
         <h2>Pro</h2>
         <div class="price-line">14,99€ <span>/ mes</span></div>
         <ul class="price-list">
-          <li>Acceso completo a biblioteca Free + Pro</li>
+          <li>Acceso a biblioteca Free + Pro</li>
           <li>Descargas premium</li>
-          <li>Acceso a nuevos packs primero</li>
-          <li>Encargos on demand a artistas</li>
+          <li>Nuevos packs antes que el resto</li>
+          <li>Encargos on demand</li>
           <li>Prioridad media en solicitudes</li>
         </ul>
         <a class="btn btn-primary full" href="commission.html">Pasar a Pro</a>
       </article>
 
-      <article class="price-card glass">
+      <article class="price-card glass glow-card">
         <div class="price-top"><span class="tag">Ultimate</span></div>
         <h2>Ultimate</h2>
         <div class="price-line">89€ <span>/ mes</span></div>
         <ul class="price-list">
           <li>Acceso completo a toda la biblioteca</li>
-          <li>Biblioteca Ultimate exclusiva</li>
+          <li>5 assets Ultimate exclusivos</li>
           <li>Hasta 25 encargos mensuales incluidos</li>
-          <li>Prioridad alta en entregas</li>
-          <li>Enfoque para estudios y equipos</li>
+          <li>Prioridad alta de producción</li>
+          <li>Enfoque para estudios, marcas y equipos</li>
         </ul>
         <a class="btn btn-dark full" href="commission.html">Ir a Ultimate</a>
       </article>
     </section>
 
     <section class="wrap-inner reveal">
-      <div class="comparison-table glass">
-        <div class="table-row table-head">
-          <div>Característica</div><div>Free</div><div>Pro</div><div>Ultimate</div>
-        </div>
+      <div class="comparison-table glass glow-card">
+        <div class="table-row table-head"><div>Característica</div><div>Free</div><div>Pro</div><div>Ultimate</div></div>
         <div class="table-row"><div>Biblioteca Free</div><div>✔</div><div>✔</div><div>✔</div></div>
         <div class="table-row"><div>Biblioteca Pro</div><div>—</div><div>✔</div><div>✔</div></div>
         <div class="table-row"><div>Biblioteca Ultimate</div><div>—</div><div>—</div><div>✔</div></div>
-        <div class="table-row"><div>Descarga de modelos</div><div>Free</div><div>Completa</div><div>Completa</div></div>
+        <div class="table-row"><div>Descargas</div><div>Free</div><div>Completas</div><div>Completas</div></div>
         <div class="table-row"><div>Encargos on demand</div><div>—</div><div>✔</div><div>✔</div></div>
         <div class="table-row"><div>Encargos incluidos/mes</div><div>0</div><div>0</div><div>25</div></div>
       </div>
@@ -101,7 +102,7 @@
   </main>
 
   <footer class="site-footer wrap">
-    <div>Real3D — pricing premium claro y visual.</div>
+    <div>Real3D — pricing premium</div>
     <a href="admin.html" class="admin-link" title="Admin">•</a>
   </footer>
   <script src="app.js"></script>
