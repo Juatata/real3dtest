@@ -1,19 +1,73 @@
 const DEFAULT_MODELS = [
-  { id: "free-1", title: "Chair", plan: "free", tag: "product", desc: "Modelo básico optimizado.", src: "./assets/models/free/chair.glb" },
-  { id: "free-2", title: "Duck Demo", plan: "free", tag: "creature", desc: "Modelo ligero para preview.", src: "./assets/models/free/duck-demo.glb" },
 
-  { id: "pro-1", title: "Apple", plan: "pro", tag: "product", desc: "Modelo simple premium.", src: "./assets/models/pro/APPLE.glb" },
-  { id: "pro-2", title: "Forest Scene", plan: "pro", tag: "environment", desc: "Escenario low poly mejorado.", src: "./assets/models/pro/low_poly_forest.glb" },
+  // FREE
+  {
+    id: "free-1",
+    title: "Helmet",
+    plan: "free",
+    tag: "product",
+    desc: "Modelo base.",
+    src: "https://modelviewer.dev/shared-assets/models/FlightHelmet.glb"
+  },
+  {
+    id: "free-2",
+    title: "Duck",
+    plan: "free",
+    tag: "creature",
+    desc: "Modelo ligero.",
+    src: "https://modelviewer.dev/shared-assets/models/Duck.glb"
+  },
 
-  { id: "ultimate-1", title: "Neil Armstrong", plan: "ultimate", tag: "character", desc: "Asset histórico de alta calidad.", src: "./assets/models/ultimate/NeilArmstrong.glb" },
-  { id: "ultimate-2", title: "Ferrari", plan: "ultimate", tag: "vehicle", desc: "Vehículo de alto nivel.", src: "./assets/models/ultimate/Ferrari.glb" },
-  { id: "ultimate-3", title: "Gaming PC", plan: "ultimate", tag: "product", desc: "Setup premium detallado.", src: "./assets/models/ultimate/custom_gaming_pc.glb" }
+  // PRO
+  {
+    id: "pro-1",
+    title: "Robot",
+    plan: "pro",
+    tag: "character",
+    desc: "Modelo premium.",
+    src: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+  },
+  {
+    id: "pro-2",
+    title: "Fox",
+    plan: "pro",
+    tag: "creature",
+    desc: "Modelo orgánico.",
+    src: "https://modelviewer.dev/shared-assets/models/Fox.glb"
+  },
+
+  // ULTIMATE
+  {
+    id: "ultimate-1",
+    title: "Neil Armstrong",
+    plan: "ultimate",
+    tag: "character",
+    desc: "Astronauta.",
+    src: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
+  },
+  {
+    id: "ultimate-2",
+    title: "Astronaut",
+    plan: "ultimate",
+    tag: "character",
+    desc: "Modelo hero.",
+    src: "https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+  },
+  {
+    id: "ultimate-3",
+    title: "Boom Box",
+    plan: "ultimate",
+    tag: "product",
+    desc: "Objeto premium.",
+    src: "https://modelviewer.dev/shared-assets/models/boom_box.glb"
+  }
+
 ];
 
 function getCustomAssets() {
   try {
     return JSON.parse(localStorage.getItem("real3d_assets") || "[]");
-  } catch (e) {
+  } catch {
     return [];
   }
 }
