@@ -4,110 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real3D — Biblioteca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-  <div class="bg-mesh"></div>
   <div class="bg-orb orb-a"></div>
-  <div class="bg-orb orb-b"></div>
   <div class="bg-orb orb-c"></div>
-
-  <header class="site-header glass sticky">
-    <div class="wrap nav-row">
-      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="library.html" class="active">Biblioteca</a>
+  <header class="site-header glass">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
+      <nav>
+        <a class="active" href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
         <a href="commission.html">Encargar</a>
+        <a href="quality.html">Calidad</a>
+        <a href="about.html">Empresa</a>
       </nav>
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="plans.html">Planes</a>
-        <a class="btn btn-primary" href="commission.html">Pedir encargo</a>
-      </div>
-      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
-    </div>
-    <div class="mobile-menu wrap">
-      <a href="index.html">Inicio</a>
-      <a href="library.html">Biblioteca</a>
-      <a href="plans.html">Planes</a>
-      <a href="commission.html">Encargar</a>
+      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
     </div>
   </header>
 
-  <main class="wrap section-xl">
-    <div class="page-top reveal">
-      <div>
-        <div class="eyebrow">Biblioteca Real3D</div>
-        <h1 class="page-title">Assets organizados por acceso y filtrados por categoría.</h1>
-        <p class="lead small">Cada nivel incluye cinco modelos de prueba con preview 3D interactiva. Los assets Free se descargan desde la propia plataforma.</p>
-      </div>
-      <div class="plan-pill-group glass">
-        <span class="plan-pill active">5 Free</span>
-        <span class="plan-pill">5 Pro</span>
-        <span class="plan-pill">5 Ultimate</span>
-      </div>
-    </div>
-
-    <section class="library-segment reveal" data-tier-section="free">
-      <div class="segment-header">
-        <div>
-          <h2>Biblioteca Free</h2>
-          <p>Selección abierta con descarga directa.</p>
-        </div>
-      </div>
-      <div class="filter-bar glass" data-filter-bar="free">
-        <button class="filter-chip active" data-filter="all">Todo</button>
-        <button class="filter-chip" data-filter="props">Props</button>
-        <button class="filter-chip" data-filter="gear">Gear</button>
-        <button class="filter-chip" data-filter="environment">Environment</button>
-      </div>
-      <div id="free-grid" class="asset-grid"></div>
+  <main class="wrap page-top">
+    <section class="section-head reveal">
+      <div class="eyebrow">Biblioteca curada</div>
+      <h1>Explora, filtra, previsualiza y descarga.</h1>
+      <p>15 modelos de prueba divididos en Free, Pro y Ultimate, todos con preview interactiva funcional.</p>
     </section>
 
-    <section class="library-segment reveal" data-tier-section="pro">
-      <div class="segment-header">
-        <div>
-          <h2>Biblioteca Pro</h2>
-          <p>Catálogo premium para usuarios Pro.</p>
-        </div>
-        <a class="btn btn-secondary" href="plans.html">Desbloquear Pro</a>
+    <section class="toolbar glass reveal">
+      <div class="filter-group">
+        <button class="filter-btn active" data-plan="all">Todo</button>
+        <button class="filter-btn" data-plan="free">Free</button>
+        <button class="filter-btn" data-plan="pro">Pro</button>
+        <button class="filter-btn" data-plan="ultimate">Ultimate</button>
       </div>
-      <div class="filter-bar glass" data-filter-bar="pro">
-        <button class="filter-chip active" data-filter="all">Todo</button>
-        <button class="filter-chip" data-filter="vehicles">Vehicles</button>
-        <button class="filter-chip" data-filter="props">Props</button>
-        <button class="filter-chip" data-filter="environment">Environment</button>
+      <div class="filter-group">
+        <button class="tag-btn active" data-tag="all">Todos</button>
+        <button class="tag-btn" data-tag="character">Characters</button>
+        <button class="tag-btn" data-tag="vehicle">Vehicles</button>
+        <button class="tag-btn" data-tag="product">Products</button>
+        <button class="tag-btn" data-tag="creature">Creatures</button>
       </div>
-      <div id="pro-grid" class="asset-grid"></div>
     </section>
 
-    <section class="library-segment reveal" data-tier-section="ultimate">
-      <div class="segment-header">
-        <div>
-          <h2>Biblioteca Ultimate</h2>
-          <p>Selección avanzada orientada a estudio.</p>
+    <section class="library-layout">
+      <aside class="glass preview-side reveal">
+        <div class="preview-side-top">
+          <span class="pill">Preview interactiva</span>
+          <span class="pill" id="previewPlan">Free</span>
         </div>
-        <a class="btn btn-dark" href="plans.html">Ver Ultimate</a>
-      </div>
-      <div class="filter-bar glass" data-filter-bar="ultimate">
-        <button class="filter-chip active" data-filter="all">Todo</button>
-        <button class="filter-chip" data-filter="characters">Characters</button>
-        <button class="filter-chip" data-filter="showcase">Showcase</button>
-        <button class="filter-chip" data-filter="environment">Environment</button>
-      </div>
-      <div id="ultimate-grid" class="asset-grid"></div>
+        <div class="preview-stage" id="previewStage"></div>
+        <div class="preview-info">
+          <div>
+            <h3 id="previewTitle">Selecciona un asset</h3>
+            <p id="previewText">Haz click en cualquier tarjeta para cargar la preview 3D.</p>
+          </div>
+          <a class="btn btn-gradient" id="downloadBtn" href="#" download>Descargar</a>
+        </div>
+      </aside>
+
+      <section class="asset-grid" id="assetGrid"></section>
     </section>
   </main>
 
-  <footer class="site-footer wrap">
-    <div>Real3D — biblioteca premium</div>
-    <a href="admin.html" class="admin-link" title="Admin">•</a>
-  </footer>
+  <script src="models.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

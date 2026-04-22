@@ -3,184 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real3D — Assets 3D premium y encargos a medida</title>
-  <meta name="description" content="Bibliotecas 3D por suscripción, assets descargables y encargos a medida en una plataforma premium." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>Real3D — Assets premium y encargos 3D</title>
+  <meta name="description" content="Bibliotecas 3D por suscripción, encargos a medida y acceso premium a assets curados." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-mesh"></div>
   <div class="bg-orb orb-a"></div>
   <div class="bg-orb orb-b"></div>
-  <div class="bg-orb orb-c"></div>
-
-  <header class="site-header glass sticky">
-    <div class="wrap nav-row">
-      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
-      <nav class="nav-links">
-        <a href="index.html" class="active">Inicio</a>
+  <header class="site-header glass">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
+      <nav>
         <a href="library.html">Biblioteca</a>
         <a href="plans.html">Planes</a>
         <a href="commission.html">Encargar</a>
+        <a href="quality.html">Calidad</a>
+        <a href="about.html">Empresa</a>
       </nav>
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="library.html">Explorar assets</a>
-        <a class="btn btn-primary" href="commission.html">Pedir encargo</a>
-      </div>
-      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
-    </div>
-    <div class="mobile-menu wrap">
-      <a href="index.html">Inicio</a>
-      <a href="library.html">Biblioteca</a>
-      <a href="plans.html">Planes</a>
-      <a href="commission.html">Encargar</a>
+      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
     </div>
   </header>
 
   <main>
-    <section class="hero wrap section-xl reveal">
-      <div class="eyebrow">Bibliotecas 3D premium · Suscripción · Encargos</div>
-      <div class="hero-grid">
-        <div>
-          <h1 class="display gradient-text">Una plataforma 3D con catálogo curado y producción a medida.</h1>
-          <p class="lead">
-            Descarga assets listos para producción, visualiza modelos 3D directamente en la web y escala de Free a Pro o Ultimate según el nivel de acceso y volumen que necesites.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="library.html">Entrar en la biblioteca</a>
-            <a class="btn btn-secondary" href="plans.html">Ver planes</a>
-            <a class="btn btn-dark" href="commission.html">Encargo a medida</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat glass">
-              <strong>15+</strong>
-              <span>Assets de ejemplo repartidos por niveles</span>
-            </div>
-            <div class="stat glass">
-              <strong>3 planes</strong>
-              <span>Free, Pro y Ultimate</span>
-            </div>
-            <div class="stat glass">
-              <strong>25 / mes</strong>
-              <span>Encargos incluidos en Ultimate</span>
-            </div>
-          </div>
+    <section class="hero wrap">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Assets 3D premium + encargos a medida</div>
+        <h1>Una plataforma donde la calidad sí se nota.</h1>
+        <p class="lead">
+          Accede a bibliotecas 3D por nivel, compara la calidad visual entre planes
+          y encarga proyectos a artistas cuando necesitas algo realmente a medida.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="library.html">Explorar biblioteca</a>
+          <a class="btn btn-secondary" href="plans.html">Ver planes</a>
         </div>
-        <div class="hero-showcase glass card-pad glow-card">
-          <div class="panel-topline">
-            <span class="tiny-badge">Preview interactiva</span>
-            <span class="tiny-badge tiny-badge-soft">Asset destacado</span>
-          </div>
+        <div class="hero-badges">
+          <span>5 assets Free</span>
+          <span>5 assets Pro</span>
+          <span>5 assets Ultimate</span>
+        </div>
+      </div>
+
+      <div class="hero-panel glass reveal">
+        <div class="hero-panel-top">
+          <span class="pill">Preview interactiva</span>
+          <span class="pill">Asset destacado</span>
+        </div>
+        <div class="hero-model-frame">
+          <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
           <model-viewer
-            class="hero-viewer"
-            src="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb"
+            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            alt="Asset destacado"
             camera-controls
             auto-rotate
             shadow-intensity="1"
-            exposure="1.1"
-            environment-image="neutral"
-            poster="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/FlightHelmet/screenshot/screenshot.png">
-          </model-viewer>
-          <div class="viewer-caption-row">
-            <div>
-              <h3>Flight Helmet</h3>
-              <p>Visualización en tiempo real antes de descargar o solicitar un encargo relacionado.</p>
-            </div>
-            <button class="btn btn-small btn-primary" data-download-url="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb" data-download-name="flight-helmet.glb">Descargar</button>
+            exposure="1"
+            style="width:100%;height:100%;"
+          ></model-viewer>
+        </div>
+        <div class="hero-panel-meta">
+          <div>
+            <h3>Astronaut Hero Asset</h3>
+            <p>Preview completa con cámara libre y rotación automática.</p>
           </div>
+          <a class="btn btn-gradient" href="plans.html">Desbloquear calidad Pro</a>
         </div>
       </div>
     </section>
 
-    <section class="wrap section reveal">
-      <div class="section-heading">
-        <div class="eyebrow">Cómo funciona</div>
-        <h2>Acceso inmediato a biblioteca, planes claros y pedidos personalizados.</h2>
+    <section class="section wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Diferencia visible entre planes</div>
+        <h2>La estructura de catálogo escala con tus necesidades.</h2>
+        <p>
+          Free sirve para descubrir, Pro abre la biblioteca premium y Ultimate añade prioridad,
+          acceso total y hasta 25 encargos mensuales.
+        </p>
       </div>
-      <div class="three-col">
-        <article class="glass feature-card glow-card">
-          <div class="feature-number">01</div>
-          <h3>Biblioteca Free</h3>
-          <p>Accede a una selección descargable y prueba la experiencia visual de la plataforma con preview 3D dentro de la propia web.</p>
+      <div class="grid-3">
+        <article class="feature-card glass reveal">
+          <span class="feature-kicker">Free</span>
+          <h3>Entrada limpia</h3>
+          <p>Biblioteca gratuita con 5 assets funcionales y descarga directa.</p>
+          <a class="text-link" href="library.html?plan=free">Ver assets Free</a>
         </article>
-        <article class="glass feature-card glow-card">
-          <div class="feature-number">02</div>
-          <h3>Suscripción Pro</h3>
-          <p>Desbloquea la biblioteca Pro, más variedad de assets, nuevas colecciones y acceso a encargos on demand.</p>
+        <article class="feature-card glass reveal">
+          <span class="feature-kicker pro">Pro</span>
+          <h3>Calidad premium</h3>
+          <p>Biblioteca completa de suscripción y acceso a assets mejor curados.</p>
+          <a class="text-link" href="library.html?plan=pro">Ver assets Pro</a>
         </article>
-        <article class="glass feature-card glow-card">
-          <div class="feature-number">03</div>
-          <h3>Ultimate</h3>
-          <p>Todo el catálogo, prioridad alta y hasta 25 encargos mensuales incluidos para estudios y equipos que necesitan volumen.</p>
+        <article class="feature-card glass reveal">
+          <span class="feature-kicker ultimate">Ultimate</span>
+          <h3>Máximo nivel</h3>
+          <p>Todo desbloqueado, prioridad y hasta 25 encargos al mes.</p>
+          <a class="text-link" href="library.html?plan=ultimate">Ver assets Ultimate</a>
         </article>
       </div>
     </section>
 
-    <section class="wrap section reveal">
-      <div class="split-card glass">
+    <section class="section wrap split">
+      <div class="glass panel reveal">
+        <div class="eyebrow">Comparativa</div>
+        <h2>Diseñado para vender sensación de producto serio.</h2>
+        <p>
+          Fondos con gradiente, brillos suaves, botones vivos y navegación multipágina
+          para dar la impresión de plataforma real y no de maqueta escolar.
+        </p>
+        <a class="btn btn-secondary" href="quality.html">Ver calidad por planes</a>
+      </div>
+      <div class="glass panel reveal">
+        <div class="eyebrow">Encargos</div>
+        <h2>De asset listo a proyecto a medida.</h2>
+        <p>
+          Si no existe en biblioteca, puedes pedir props, personajes, packs,
+          escenarios o proyectos personalizados.
+        </p>
+        <a class="btn btn-primary" href="commission.html">Encargar proyecto</a>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="cta glass reveal">
         <div>
-          <div class="eyebrow">Catálogo por niveles</div>
-          <h2>Free para entrar. Pro para producir. Ultimate para escalar.</h2>
-          <p class="muted">Cada biblioteca tiene sus propios assets, etiquetas y estilo visual. Puedes navegar por categorías, filtrar contenido y descargar los modelos disponibles según el nivel de acceso.</p>
-          <div class="mini-actions">
-            <a href="library.html" class="btn btn-primary">Ir a la biblioteca</a>
-            <a href="plans.html" class="btn btn-ghost">Comparar planes</a>
-          </div>
-        </div>
-        <div class="stack-cards">
-          <div class="mini-card glass"><span>Free</span><strong>Props, entornos y ejemplos listos para descargar</strong></div>
-          <div class="mini-card glass"><span>Pro</span><strong>Catálogo ampliado con assets premium y packs más completos</strong></div>
-          <div class="mini-card glass"><span>Ultimate</span><strong>Biblioteca total, acceso prioritario y flujo orientado a estudio</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap section reveal">
-      <div class="section-heading">
-        <div class="eyebrow">Experiencia premium</div>
-        <h2>Diseño oscuro, gradientes vivos y una interfaz pensada para sentirse humana.</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item glass glow-card">
-          <span>1</span>
-          <h3>Exploras con calma</h3>
-          <p>La navegación está pensada para ver, comparar y sentir los assets antes de tomar una decisión.</p>
-        </div>
-        <div class="timeline-item glass glow-card">
-          <span>2</span>
-          <h3>Eliges tu nivel</h3>
-          <p>Free para empezar, Pro para desbloquear más valor y Ultimate para un flujo continuo de producción.</p>
-        </div>
-        <div class="timeline-item glass glow-card">
-          <span>3</span>
-          <h3>Escalas con encargos</h3>
-          <p>Si no está en biblioteca, el formulario de encargos te lleva al siguiente paso con una experiencia más personalizada.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap section reveal">
-      <div class="cta-block glass glow-card">
-        <div>
-          <div class="eyebrow">Real3D</div>
-          <h2>Catálogo 3D curado, suscripciones premium y producción a medida.</h2>
-          <p class="muted">Una experiencia visual sólida para presentar el proyecto como una plataforma acabada y con identidad propia.</p>
+          <div class="eyebrow">Ultimate a 75€/mes</div>
+          <h2>Escala con biblioteca completa y encargos incluidos.</h2>
         </div>
         <div class="cta-actions">
-          <a href="plans.html" class="btn btn-primary">Ver precios</a>
-          <a href="commission.html" class="btn btn-dark">Solicitar encargo</a>
+          <a class="btn btn-gradient" href="plans.html">Ver pricing final</a>
+          <a class="btn btn-ghost" href="about.html">Conocer Real3D</a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer wrap">
-    <div>© 2026 Real3D</div>
-    <a href="admin.html" class="admin-link" title="Admin">•</a>
-  </footer>
 
   <script src="app.js"></script>
 </body>

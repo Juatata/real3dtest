@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real3D — Calidad por plan</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-orb orb-c"></div>
+  <header class="site-header glass">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>Real3D</a>
+      <nav>
+        <a href="library.html">Biblioteca</a>
+        <a href="plans.html">Planes</a>
+        <a href="commission.html">Encargar</a>
+        <a class="active" href="quality.html">Calidad</a>
+        <a href="about.html">Empresa</a>
+      </nav>
+      <a class="btn btn-sm btn-ghost" href="admin.html">Admin</a>
+    </div>
+  </header>
+
+  <main class="wrap page-top">
+    <section class="section-head reveal">
+      <div class="eyebrow">Comparativa visual</div>
+      <h1>La percepción de valor cambia por plan.</h1>
+      <p>Hemos separado el catálogo para que se note que Free es acceso inicial, Pro es premium y Ultimate es máximo nivel.</p>
+    </section>
+
+    <section class="quality-grid">
+      <article class="glass quality-card reveal">
+        <span class="pill">Free</span>
+        <div class="quality-stage"><model-viewer src="https://modelviewer.dev/shared-assets/models/Horse.glb" camera-controls auto-rotate style="width:100%;height:100%;"></model-viewer></div>
+        <h3>Entrada funcional</h3>
+        <p>Assets correctos para probar la plataforma y descargar modelos base.</p>
+      </article>
+
+      <article class="glass quality-card reveal">
+        <span class="pill pro">Pro</span>
+        <div class="quality-stage"><model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" camera-controls auto-rotate style="width:100%;height:100%;"></model-viewer></div>
+        <h3>Biblioteca premium</h3>
+        <p>Más presencia visual, modelos mejor curados y sensación clara de upgrade.</p>
+      </article>
+
+      <article class="glass quality-card reveal">
+        <span class="pill ultimate">Ultimate</span>
+        <div class="quality-stage"><model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" camera-controls auto-rotate style="width:100%;height:100%;"></model-viewer></div>
+        <h3>Máximo nivel</h3>
+        <p>La opción pensada para quienes necesitan catálogo completo y prioridad real.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
