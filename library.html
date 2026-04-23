@@ -1,88 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real3D — Biblioteca</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<title>Biblioteca</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="library">
-  <div class="bg-glow glow-a"></div>
-  <div class="bg-glow glow-c"></div>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="brand">
-        <span class="brand-mark"></span>
-        <span>Real3D</span>
-      </a>
+<body>
 
-      <nav class="main-nav">
-        <a class="active" href="library.html">Biblioteca</a>
-        <a href="plans.html">Planes</a>
-        <a href="commission.html">Encargar</a>
-        <a href="quality.html">Calidad</a>
-        <a href="about.html">Empresa</a>
-      </nav>
+<div class="nav">
+  <div class="logo">Real3D</div>
+  <div>
+    <a href="index.html">Inicio</a>
+    <a href="plans.html">Planes</a>
+    <a href="commission.html">Encargar</a>
+  </div>
+</div>
 
-      <a href="admin.html" class="btn btn-ghost btn-sm">Admin</a>
-    </div>
-  </header>
+<section class="hero">
+  <h1>Biblioteca</h1>
+</section>
 
-  <main class="container page-top">
-    <section class="section-head reveal">
-      <div class="eyebrow">Biblioteca curada</div>
-      <h1>Explora, filtra, previsualiza y descarga.</h1>
-      <p>
-        La biblioteca está optimizada para cargar rápido: las tarjetas son ligeras y solo hay una preview 3D activa a la vez.
-      </p>
-    </section>
+<div id="grid" class="grid"></div>
 
-    <section class="card toolbar reveal">
-      <div class="toolbar-group">
-        <button class="filter-btn active" data-plan="all">Todo</button>
-        <button class="filter-btn" data-plan="free">Free</button>
-        <button class="filter-btn" data-plan="pro">Pro</button>
-        <button class="filter-btn" data-plan="ultimate">Ultimate</button>
-      </div>
+<script src="models.js"></script>
+<script src="app.js"></script>
 
-      <div class="toolbar-group">
-        <button class="tag-btn active" data-tag="all">Todos</button>
-        <button class="tag-btn" data-tag="product">Products</button>
-        <button class="tag-btn" data-tag="character">Characters</button>
-        <button class="tag-btn" data-tag="vehicle">Vehicles</button>
-        <button class="tag-btn" data-tag="creature">Creatures</button>
-      </div>
-    </section>
-
-    <section class="library-layout">
-      <aside class="card preview-panel reveal">
-        <div class="panel-top">
-          <span class="pill">Preview interactiva</span>
-          <span id="previewPlan" class="pill pill-accent">Free</span>
-        </div>
-
-        <div id="previewStage" class="preview-stage loading-state">
-          <div class="loading-copy">
-            <strong>Selecciona un asset</strong>
-            <span>La preview 3D se cargará aquí.</span>
-          </div>
-        </div>
-
-        <div class="preview-meta">
-          <div>
-            <h3 id="previewTitle">Selecciona un asset</h3>
-            <p id="previewText">Haz click sobre una tarjeta para abrir la preview 3D.</p>
-          </div>
-          <a id="downloadBtn" href="#" class="btn btn-gradient disabled" download>Descargar</a>
-        </div>
-      </aside>
-
-      <section id="assetGrid" class="asset-grid"></section>
-    </section>
-  </main>
-
-  <script src="models.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
