@@ -176,6 +176,17 @@ function initCommissionForm() {
   });
 }
 
+function initCollaborationForm() {
+  const form = document.getElementById('collaboration-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast('Solicitud de colaboración enviada.');
+    form.reset();
+    document.querySelectorAll('.custom-select').forEach(resetCustomSelect);
+  });
+}
+
 function resetCustomSelect(select) {
   const trigger = select.querySelector('.custom-select-trigger');
   const hidden = select.querySelector('input[type="hidden"]');
@@ -352,5 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initDownloads();
   initCommissionForm();
+  initCollaborationForm();
   initAdmin();
 });

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real3D — Colaborar con nosotros</title>
+  <meta name="description" content="Únete como artista colaborador de Real3D y recibe encargos 3D con reparto de ingresos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-orb orb-c"></div>
+
+  <header class="site-header glass sticky">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand"><span class="brand-mark"></span>Real3D</a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="library.html">Biblioteca</a>
+        <a href="plans.html">Planes</a>
+        <a href="commission.html">Encargar</a>
+        <a href="collaborate.html" class="active">Colaborar</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="commission.html">Ver encargos</a>
+        <a class="btn btn-primary" href="#collaboration-form">Aplicar</a>
+      </div>
+      <button class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+    </div>
+    <div class="mobile-menu wrap">
+      <a href="index.html">Inicio</a>
+      <a href="library.html">Biblioteca</a>
+      <a href="plans.html">Planes</a>
+      <a href="commission.html">Encargar</a>
+      <a href="collaborate.html">Colaborar</a>
+    </div>
+  </header>
+
+  <main class="wrap section-xl">
+    <div class="page-top reveal">
+      <div>
+        <div class="eyebrow">Colaborar con nosotros</div>
+        <h1 class="page-title">Recibe encargos 3D de Real3D y gana por cada proyecto aprobado.</h1>
+        <p class="lead small">Buscamos artistas, modeladores y generalistas 3D para trabajar con encargos de clientes. Real3D trae la solicitud, tú produces el asset y compartimos el ingreso del proyecto.</p>
+      </div>
+    </div>
+
+    <section class="commission-layout reveal">
+      <form class="glass commission-form card-pad glow-card" id="collaboration-form">
+        <div class="form-grid">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="name" placeholder="Tu nombre o estudio" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+          </label>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>Especialidad principal</span>
+            <div class="custom-select" data-name="specialty" data-placeholder="Selecciona especialidad">
+              <input type="hidden" name="specialty" required>
+              <button type="button" class="custom-select-trigger">Selecciona especialidad</button>
+              <div class="custom-select-menu">
+                <button type="button" class="custom-option" data-value="Props para videojuegos">Props para videojuegos</button>
+                <button type="button" class="custom-option" data-value="Personajes">Personajes</button>
+                <button type="button" class="custom-option" data-value="Vehículos">Vehículos</button>
+                <button type="button" class="custom-option" data-value="Escenarios / entornos">Escenarios / entornos</button>
+                <button type="button" class="custom-option" data-value="Texturizado / materiales">Texturizado / materiales</button>
+              </div>
+            </div>
+          </label>
+          <label>
+            <span>Disponibilidad</span>
+            <div class="custom-select" data-name="availability" data-placeholder="Selecciona disponibilidad">
+              <input type="hidden" name="availability" required>
+              <button type="button" class="custom-select-trigger">Selecciona disponibilidad</button>
+              <div class="custom-select-menu">
+                <button type="button" class="custom-option" data-value="1 encargo al mes">1 encargo al mes</button>
+                <button type="button" class="custom-option" data-value="2-3 encargos al mes">2-3 encargos al mes</button>
+                <button type="button" class="custom-option" data-value="4+ encargos al mes">4+ encargos al mes</button>
+                <button type="button" class="custom-option" data-value="Solo proyectos grandes">Solo proyectos grandes</button>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <label>
+          <span>Portfolio</span>
+          <input type="url" name="portfolio" placeholder="ArtStation, Behance, Sketchfab o web personal" required>
+        </label>
+
+        <div class="form-grid">
+          <label>
+            <span>Software principal</span>
+            <input type="text" name="software" placeholder="Blender, Maya, ZBrush, Substance...">
+          </label>
+          <label>
+            <span>Tarifa o reparto esperado</span>
+            <input type="text" name="rate" placeholder="Ej: 60% por encargo / desde 120€">
+          </label>
+        </div>
+
+        <label>
+          <span>Experiencia y estilo</span>
+          <textarea rows="7" name="experience" placeholder="Cuéntanos qué tipo de modelos haces, calidad que puedes entregar, plazos habituales y para qué tipo de encargos encajas mejor." required></textarea>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Enviar candidatura</button>
+      </form>
+
+      <aside class="glass card-pad side-summary glow-card">
+        <div class="eyebrow">Cómo funciona</div>
+        <h2>Real3D te conecta con encargos de clientes.</h2>
+        <ul class="bullet-list">
+          <li><strong>1.</strong> Revisamos tu portfolio y especialidad.</li>
+          <li><strong>2.</strong> Te asignamos encargos que encajen con tu estilo y disponibilidad.</li>
+          <li><strong>3.</strong> Real3D gestiona la solicitud, el cliente y la entrega final.</li>
+          <li><strong>4.</strong> Tú cobras una parte del dinero de cada encargo aprobado.</li>
+        </ul>
+        <div class="divider"></div>
+        <p class="muted">La colaboración se revisa proyecto a proyecto. El porcentaje se pacta antes de empezar según dificultad, plazo y nivel de acabado.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <div>Real3D — colaboración para artistas 3D</div>
+    <a href="admin.html" class="admin-link" title="Admin">•</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
