@@ -1,21 +1,21 @@
 const DEFAULT_ASSETS = [
-  { id:'free-duck', title:'Duck Classic', description:'Prop limpio y ligero para pruebas y escenas básicas.', category:'props', badge:'Free', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Duck/screenshot/screenshot.png' },
-  { id:'free-helmet', title:'Flight Helmet Lite', description:'Asset de gear con materiales bien definidos.', category:'gear', badge:'Popular', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/FlightHelmet/screenshot/screenshot.png' },
-  { id:'free-lantern', title:'Lantern', description:'Prop ambiental ideal para escenas oscuras o medievales.', category:'props', badge:'New', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Lantern/glTF-Binary/Lantern.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Lantern/screenshot/screenshot.png' },
-  { id:'free-sponza', title:'Sponza Sample', description:'Entorno clásico para mostrar composición y escala.', category:'environment', badge:'Scene', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Sponza/glTF-Binary/Sponza.glb', posterUrl:'' },
-  { id:'free-avocado', title:'Avocado Pack', description:'Modelo sencillo con carácter y acabado brillante.', category:'props', badge:'Starter', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Avocado/glTF-Binary/Avocado.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/screenshot/screenshot.png' },
+  { id:'free-duck', title:'El Pato', description:'Un pato amarillo perfecto para pruebas rápidas.', category:'props', badge:'Free', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Duck/glTF-Binary/Duck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Duck/screenshot/screenshot.png' },
+  { id:'free-helmet', title:'Casco de Vuelo', description:'Un casco de avión con muchos detalles y buenas texturas.', category:'gear', badge:'Popular', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/FlightHelmet/glTF-Binary/FlightHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/FlightHelmet/screenshot/screenshot.png' },
+  { id:'free-lantern', title:'Linterna Medieval', description:'Linterna clásica para ambientes oscuros o históricos.', category:'props', badge:'New', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Lantern/glTF-Binary/Lantern.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Lantern/screenshot/screenshot.png' },
+  { id:'free-sponza', title:'Palacio de Sponza', description:'Escena arquitectónica clásica para comparar iluminación.', category:'environment', badge:'Scene', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Sponza/glTF-Binary/Sponza.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Sponza/screenshot/screenshot.png' },
+  { id:'free-avocado', title:'Aguacate Brillante', description:'Un aguacate con texturas que brillan. Ideal para testear materiales.', category:'props', badge:'Starter', tier:'free', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/Avocado/glTF-Binary/Avocado.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/screenshot/screenshot.png' },
 
-  { id:'pro-boombox', title:'Boom Box', description:'Prop retro de más peso visual para colecciones Pro.', category:'props', badge:'Pro', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BoomBox/glTF-Binary/BoomBox.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/screenshot/screenshot.png' },
-  { id:'pro-waterbottle', title:'Water Bottle', description:'Producto estilizado para visualización y prototipado.', category:'props', badge:'Clean', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/WaterBottle/glTF-Binary/WaterBottle.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/WaterBottle/screenshot/screenshot.png' },
-  { id:'pro-cesium', title:'Cesium Milk Truck', description:'Vehículo completo con presencia premium.', category:'vehicles', badge:'Vehicle', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/CesiumMilkTruck/glTF-Binary/CesiumMilkTruck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CesiumMilkTruck/screenshot/screenshot.png' },
-  { id:'pro-office', title:'Office Chair', description:'Asset funcional de interior para escenas de producto.', category:'environment', badge:'Interior', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/OfficeChair/glTF-Binary/OfficeChair.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/OfficeChair/screenshot/screenshot.png' },
-  { id:'pro-rigged', title:'Rigged Figure', description:'Figura articulada para presentaciones y bloques de animación.', category:'characters', badge:'Rigged', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RiggedSimple/glTF-Binary/RiggedSimple.glb', posterUrl:'' },
+  { id:'pro-boombox', title:'Boom Box Retro', description:'Una caja de música de los 80s con presencia visual muy fuerte.', category:'props', badge:'Pro', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BoomBox/glTF-Binary/BoomBox.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/screenshot/screenshot.png' },
+  { id:'pro-waterbottle', title:'Botella de Agua', description:'Una botella moderna y limpia para visualizaciones de producto.', category:'props', badge:'Clean', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/WaterBottle/glTF-Binary/WaterBottle.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/WaterBottle/screenshot/screenshot.png' },
+  { id:'pro-cesium', title:'Camión de Leche', description:'Camión clásico de helado con detalles auténticos y escala real.', category:'vehicles', badge:'Vehicle', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/CesiumMilkTruck/glTF-Binary/CesiumMilkTruck.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/CesiumMilkTruck/screenshot/screenshot.png' },
+  { id:'pro-office', title:'Silla de Oficina', description:'Una silla de trabajo moderna para espacios interiores realistas.', category:'environment', badge:'Interior', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/OfficeChair/glTF-Binary/OfficeChair.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/OfficeChair/screenshot/screenshot.png' },
+  { id:'pro-rigged', title:'Figura Articulada', description:'Un personaje con huesos para animaciones simples.', category:'characters', badge:'Rigged', tier:'pro', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RiggedSimple/glTF-Binary/RiggedSimple.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/RiggedSimple/screenshot/screenshot.png' },
 
-  { id:'ul-robot', title:'Robot Expressive', description:'Modelo showcase con fuerte identidad visual.', category:'characters', badge:'Ultimate', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RobotExpressive/glTF-Binary/RobotExpressive.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/RobotExpressive/screenshot/screenshot.png' },
-  { id:'ul-fish', title:'Barramundi Fish', description:'Pieza de showcase orgánica para biblioteca avanzada.', category:'showcase', badge:'Organic', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BarramundiFish/glTF-Binary/BarramundiFish.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/screenshot/screenshot.png' },
-  { id:'ul-litigator', title:'Litigator', description:'Vehicle / craft de alto impacto para portada o demo.', category:'showcase', badge:'High-end', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/LittlestTokyo/glTF-Binary/LittlestTokyo.glb', posterUrl:'' },
-  { id:'ul-damaged', title:'Damaged Helmet', description:'Asset hero con mucho detalle para renders y campañas.', category:'characters', badge:'Hero', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/screenshot/screenshot.png' },
-  { id:'ul-antique', title:'Antique Camera', description:'Prop premium con aire editorial y acabado elegante.', category:'environment', badge:'Editorial', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/AntiqueCamera/glTF-Binary/AntiqueCamera.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AntiqueCamera/screenshot/screenshot.png' }
+  { id:'ul-robot', title:'Robot Expresivo', description:'Un robot de ciencia ficción con gestos y movimientos naturales.', category:'characters', badge:'Ultimate', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/RobotExpressive/glTF-Binary/RobotExpressive.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/RobotExpressive/screenshot/screenshot.png' },
+  { id:'ul-fish', title:'Pez Barramundi', description:'Un pez con texturas orgánicas complejas y mucho detalle.', category:'showcase', badge:'Organic', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/BarramundiFish/glTF-Binary/BarramundiFish.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BarramundiFish/screenshot/screenshot.png' },
+  { id:'ul-tokyo', title:'Littlest Tokio', description:'Una escena urbana de Tokio miniaturizada con mucha riqueza visual.', category:'showcase', badge:'Premium', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/LittlestTokyo/glTF-Binary/LittlestTokyo.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/LittlestTokyo/screenshot/screenshot.png' },
+  { id:'ul-damaged', title:'Casco Dañado', description:'Un casco futurista con marcas de combate y desgaste realista.', category:'characters', badge:'Hero', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/screenshot/screenshot.png' },
+  { id:'ul-antique', title:'Cámara Vintage', description:'Una cámara fotográfica clásica con detalles y presencia editorial.', category:'environment', badge:'Editorial', tier:'ultimate', modelUrl:'https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Assets@main/Models/AntiqueCamera/glTF-Binary/AntiqueCamera.glb', posterUrl:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/AntiqueCamera/screenshot/screenshot.png' }
 ];
 
 const STORAGE_KEY = 'real3d_assets_v3';
@@ -143,7 +143,7 @@ async function forceDownload(url, filename) {
     showToast('Descarga iniciada.');
   } catch {
     window.open(url, '_blank');
-    showToast('Se abrió el archivo en otra pestaña.');
+    showToast('Se abrió en otra pestaña.');
   }
 }
 
@@ -170,7 +170,7 @@ function initCommissionForm() {
   if (!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast('Solicitud enviada correctamente.');
+    showToast('Solicitud enviada.');
     form.reset();
     document.querySelectorAll('.custom-select').forEach(resetCustomSelect);
   });
@@ -298,7 +298,7 @@ function initAdmin() {
         if (select.querySelector('#asset-tier')) resetCustomSelect(select);
       });
       renderAdminList();
-      showToast('Asset guardado.');
+      showToast('Modelo guardado.');
     });
   }
 
@@ -308,7 +308,7 @@ function initAdmin() {
     const assets = getAssets().filter(a => a.id !== del.dataset.deleteId);
     saveAssets(assets);
     renderAdminList();
-    showToast('Asset eliminado.');
+    showToast('Modelo eliminado.');
   });
 
   const exportBtn = document.getElementById('export-assets-btn');
@@ -336,9 +336,9 @@ function initAdmin() {
         if (!Array.isArray(parsed)) throw new Error('bad format');
         saveAssets(parsed);
         renderAdminList();
-        showToast('Catálogo importado.');
+        showToast('Catálogo importado correctamente.');
       } catch {
-        showToast('No se pudo importar el JSON.');
+        showToast('Error al importar JSON.');
       }
     });
   }

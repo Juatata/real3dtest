@@ -17,9 +17,9 @@
   <div class="bg-orb orb-c"></div>
   <main class="wrap section-xl admin-page">
     <section class="admin-login glass card-pad glow-card" id="admin-login-box">
-      <div class="eyebrow">Acceso privado</div>
-      <h1 class="page-title">Panel de gestión</h1>
-      <p class="lead small">Gestiona el catálogo, sube assets y organiza qué biblioteca verá cada usuario.</p>
+        <div class="eyebrow">Panel de administración</div>
+        <h1 class="page-title">Acceso privado</h1>
+        <p class="lead small">Gestiona el catálogo de modelos.</p>
       <form id="admin-login-form" class="admin-login-form">
         <label>
           <span>Usuario</span>
@@ -37,11 +37,9 @@
     <section class="admin-panel hidden" id="admin-panel">
       <div class="page-top reveal">
         <div>
-          <div class="eyebrow">Panel de gestión</div>
-          <h1 class="page-title">Sube assets y ordénalos por biblioteca</h1>
-          <p class="lead small">Añade título, descripción, portada, enlace al modelo y nivel de acceso para publicar nuevo contenido.</p>
-        </div>
-        <div class="admin-top-actions">
+            <div class="eyebrow">Admin</div>
+            <h1 class="page-title">Administra los modelos</h1>
+            <p class="lead small">Añade, edita o elimina modelos del catálogo.</p>
           <button class="btn btn-secondary" id="export-assets-btn" type="button">Exportar JSON</button>
           <label class="btn btn-dark file-btn">
             Importar JSON
@@ -53,7 +51,7 @@
 
       <div class="admin-layout">
         <form class="glass card-pad admin-form glow-card" id="admin-asset-form">
-          <h2>Nuevo asset</h2>
+          <h2>Nuevo modelo</h2>
           <div class="form-grid">
             <label>
               <span>Título</span>
@@ -100,11 +98,11 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary">Guardar asset</button>
+          <button type="submit" class="btn btn-primary">Guardar modelo</button>
         </form>
 
         <section class="glass card-pad admin-list-box glow-card">
-          <h2>Assets guardados</h2>
+          <h2>Modelos en el catálogo</h2>
           <div id="admin-assets-list" class="admin-assets-list"></div>
         </section>
       </div>
